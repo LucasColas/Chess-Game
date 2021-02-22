@@ -1,6 +1,6 @@
 import pygame
 
-from chess_game.board import B, testtttt
+from chess_game.board import *
 
 print(B)
-testtttt() 
+testtttt()
