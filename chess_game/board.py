@@ -12,4 +12,4 @@ class newBoard:
 
 
     def create_GameBoard(self): #Add outline
-        pygame.draw.rect(self.Win, cornsilk, (self.Width//3, self.Width//3,self.GameBoard-self.Width//3, self.GameBoard-self.Width//3))
+        pygame.draw.rect(self.Win, cornsilk, (self.Width*0.2, self.Width*0.2,self.Width*0.5, self.Width*0.5))
