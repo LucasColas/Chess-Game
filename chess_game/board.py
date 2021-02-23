@@ -7,9 +7,9 @@ class newBoard:
     def __init__(self, Width, Height,Win):
         self.Width = Width
         self.Height = Height
-        self.GameBoard = self.Width*0.8
+        self.GameBoard = self.Width//2
         self.Win = Win
 
 
     def create_GameBoard(self): #Add outline
-        pygame.draw.rect(self.Win, cornsilk, (self.Width*0.2, self.Width*0.2,self.GameBoard, self.GameBoard))
+        pygame.draw.rect(self.Win, cornsilk, (self.Width//2, self.Width//2,self.GameBoard, self.GameBoard))

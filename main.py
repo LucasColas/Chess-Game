@@ -3,11 +3,12 @@ import pygame
 from chess_game.constants import *
 from chess_game.board import newBoard
 
+pygame.init()
 
 Win = pygame.display.set_mode((Width, Height))
 Board = newBoard(Width, Height, Win)
 def update_window(Win):
-    Win.fill(beige)
+    Win.fill(Bg)
     Board.create_GameBoard()
     pygame.display.update()
 
