@@ -17,15 +17,16 @@ class newBoard:
 
     def create_Board(self):
         self.Win.fill(beige)
+
         for row in range(Rows):
             for col in range(Cols):
                 if row%2 == 0 and col%2==0:
                     pygame.draw.rect(self.Win,brown_chocolate,(Square*row, Square*col,Square,Square))
 
-                if (row+1)%2 == 0 and (col+1)%2==0:
-                    pygame.draw.rect(self.Win,brown_chocolate,(Square*(row+1), Square*(col+1),Square,Square))
+                #if (row+1)%2 == 0 and (col+1)%2==0:
+                    #pygame.draw.rect(self.Win,brown_chocolate,(Square*(row+1), Square*(col+1),Square,Square))
 
 
         #for row in range(Rows):
             #for col in range(row%2, Cols,2):
-                #Draw
+                #pygame.draw.rect(self.Win,brown_chocolate,(Square*(row), Square*(col),Square,Square))
