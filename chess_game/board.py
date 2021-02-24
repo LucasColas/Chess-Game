@@ -1,6 +1,6 @@
 import pygame
 
-from .constants import Width, Height, cornsilk
+from .constants import Width, Height, brown_chocolate, Rows,Cols
 
 
 class newBoard:
@@ -11,5 +11,14 @@ class newBoard:
         self.Win = Win
 
 
-    def create_GameBoard(self): #Add outline
-        pygame.draw.rect(self.Win, cornsilk, (self.Width*0.2, self.Width*0.2,self.Width*0.5, self.Width*0.5))
+    #def create_GameBoard(self): #Add outline
+        #pygame.draw.rect(self.Win, cornsilk, (160, 160,480, 480))
+
+    def create_Board(self):
+        for row in range(Rows):
+            for col in range(Cols):
+                if row%2 == 0 and col%2==0:
+                    #Draw
+
+                if (row+1)%2 == 0:
+                    

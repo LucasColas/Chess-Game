@@ -7,9 +7,9 @@ pygame.init()
 
 Win = pygame.display.set_mode((Width, Height))
 Board = newBoard(Width, Height, Win)
+
 def update_window(Win):
-    Win.fill(Bg)
-    Board.create_GameBoard()
+    Win.fill(beige)
     pygame.display.update()
 
 def main():
