@@ -20,5 +20,5 @@ class newBoard:
                 if row%2 == 0 and col%2==0:
                     #Draw
 
-                if (row+1)%2 == 0:
-                    
+                if (row+1)%2 == 0 and (col+1)%2==0:
+                    #Draw
