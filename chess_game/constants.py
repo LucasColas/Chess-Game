@@ -17,7 +17,7 @@ cornsilk = (255,248,220)
 
 #Images
 #Black pieces
-Black_Knight = pygame.transform.scale(pygame.image.load(os.path.join(r"C:\Users\lucas\github\Chess-Game-with-AI\chess_game\chess_images\bK.png")), (Square, Square))
+Black_Knight = pygame.transform.scale(pygame.image.load(os.path.join("chess_images","bK.png")), (Square, Square))
 Black_Bishop = pygame.transform.scale(pygame.image.load(os.path.join("chess_images", "bB.png")), (Square, Square))
 Black_King = pygame.transform.scale(pygame.image.load(os.path.join("chess_images", "bK.png")), (Square, Square))
 Black_pawn = pygame.transform.scale(pygame.image.load(os.path.join("chess_images", "bp.png")), (Square, Square))
