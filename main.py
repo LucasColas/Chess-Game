@@ -11,6 +11,7 @@ Board = newBoard(Width, Height, Win)
 def update_window(Win):
 
     Board.create_Board()
+    Win.blit(Black_Queen)
     pygame.display.update()
 
 def main():
