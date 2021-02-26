@@ -2,6 +2,7 @@ import pygame
 
 from .constants import Width, Height, Rows,Cols,Square
 from .constants import White, brown
+from .constants import White_Knight
 
 
 class newBoard:
@@ -21,3 +22,6 @@ class newBoard:
         for row in range(Rows):
             for col in range(row%2, Cols,2):
                 pygame.draw.rect(self.Win,brown,(Square*(row), Square*(col),Square,Square))
+
+    def draw_test(self):
+        self.Win.blit(White_Knight)
