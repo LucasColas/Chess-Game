@@ -1,7 +1,7 @@
 import pygame
 
 from .constants import Width, Height, Rows,Cols,Square
-from .constants import White, brown
+from .constants import White, brown, Black
 from .constants import White_Knight
 
 
@@ -17,11 +17,11 @@ class newBoard:
         #pygame.draw.rect(self.Win, cornsilk, (160, 160,480, 480))
 
     def create_Board(self):
-        self.Win.fill(White)
+        self.Win.fill(Black)
 
         for row in range(Rows):
             for col in range(row%2, Cols,2):
-                pygame.draw.rect(self.Win,brown,(Square*(row), Square*(col),Square,Square))
+                pygame.draw.rect(self.Win,White,(Square*(row), Square*(col),Square,Square))
 
     def draw_test(self):
         self.Win.blit(White_Knight, (self.Width//2, self.Width//2))
