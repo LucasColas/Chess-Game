@@ -2,7 +2,7 @@ import pygame
 
 from chess_game.constants import *
 from chess_game.board import newBoard
-from Pieces import test_piece
+from chess_game.Pieces import test_piece
 
 pygame.init()
 
