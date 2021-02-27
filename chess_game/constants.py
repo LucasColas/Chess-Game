@@ -2,9 +2,9 @@ import pygame
 import os
 
 #Size
-Width, Height = 800,800
+Width, Height = 760,760
 Rows, Cols = 8,8
-Square = Width//8
+Square = Width//Rows
 
 #Colors
 Bg = (47,79,79)
