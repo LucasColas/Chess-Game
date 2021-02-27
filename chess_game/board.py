@@ -24,4 +24,4 @@ class newBoard:
                 pygame.draw.rect(self.Win,brown,(Square*(row), Square*(col),Square,Square))
 
     def draw_test(self):
-        self.Win.blit(White_Knight)
+        self.Win.blit(White_Knight, (self.Width//2, self.Width//2))
