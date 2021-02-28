@@ -33,8 +33,8 @@ class Pawn(Piece):
         Win.blit(self.image, (self.x, self.y))
 
     def available_moves(self):
+        
         if self.first_move:
-
             self.first_move = False
 
 class Rook(Piece):
