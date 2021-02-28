@@ -13,3 +13,4 @@ class Piece:
 class Pawn(Piece):
     def __init__(self, image):
         super().__init__(image)
+        
