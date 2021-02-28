@@ -13,4 +13,23 @@ class Piece:
 class Pawn(Piece):
     def __init__(self, image):
         super().__init__(image)
-        
+
+class Rook(Piece):
+    def __init__(self, image):
+        super().__init__(image)
+
+class Bishop(Piece):
+    def __init__(self, image):
+        super().__init__(image)
+
+class Knight(Piece):
+    def __init__(self, image):
+        super().__init__(image)
+
+class Queen(Piece):
+    def __init__(self, image):
+        super().__init__(image)
+
+class King(Piece):
+    def __init__(self, image):
+        super().__init__(image)
