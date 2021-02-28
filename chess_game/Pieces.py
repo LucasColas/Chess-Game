@@ -14,9 +14,28 @@ class Piece:
 
 
 class Pawn(Piece):
-    def __init__(self, image,x,y):
+    def __init__(self,Square, image,row,col):
         super().__init__(image)
+        self.Square = Square
+        self.row = row
+        self.col = col
+        self.x = 0
+        self.y = 0
+        self.first_move = True
+        self.image = image
+        self.calc_pos()
 
+    def calc_pos(self):
+        self.x = self.row*self.Square
+        self.y = self.row*self.Square
+
+    def draw_piece(self,Win):
+        Win.blit(self.image, (self.x, self.y))
+
+    def available_moves(self):
+        if self.first_move:
+
+            self.first_move = False
 
 class Rook(Piece):
     def __init__(self, image,x,y):
