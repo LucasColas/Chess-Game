@@ -13,6 +13,7 @@ def update_window(Win):
 
     Board.create_Board()
     #Board.draw_test()
+    Board.draw_pieces()
     pygame.display.update()
 
 def main():

@@ -28,7 +28,8 @@ class newBoard:
     def draw_test(self):
         self.Win.blit(White_Knight, (self.Width//2, self.Width//2))
 
-    def draw_piece(self):
+    def draw_pieces(self):
         for row in self.Rows:
             for col in self.Cols:
-                
+                if row == 1:
+                    self.Win.blit(White_pawn, (Square*col, Square*row))
