@@ -6,11 +6,13 @@ from .constants import White_Knight
 
 
 class newBoard:
-    def __init__(self, Width, Height,Win):
+    def __init__(self, Width, Height, Rows, Cols, Win):
         self.Width = Width
         self.Height = Height
         self.GameBoard = self.Width//2
         self.Win = Win
+        self.Rows = Rows
+        self.Cols = Cols
 
 
     #def create_GameBoard(self): #Add outline
@@ -25,3 +27,8 @@ class newBoard:
 
     def draw_test(self):
         self.Win.blit(White_Knight, (self.Width//2, self.Width//2))
+
+    def draw_piece(self):
+        for row in self.Rows:
+            for col in self.Cols:
+                

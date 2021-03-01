@@ -7,7 +7,7 @@ from chess_game.board import newBoard
 pygame.init()
 
 Win = pygame.display.set_mode((Width, Height))
-Board = newBoard(Width, Height, Win)
+Board = newBoard(Width, Height, Rows, Cols, Win)
 
 def update_window(Win):
 
