@@ -20,7 +20,7 @@ cornsilk = (255,248,220)
 Black_Knight = pygame.transform.scale(pygame.image.load(os.path.join("chess_game\chess_images","bKN.png")), (Square, Square))
 Black_Bishop = pygame.transform.scale(pygame.image.load(os.path.join("chess_game\chess_images", "bB.png")), (Square, Square))
 Black_King = pygame.transform.scale(pygame.image.load(os.path.join("chess_game\chess_images", "bK.png")), (Square, Square))
-Black_pawn = pygame.transform.scale(pygame.image.load(os.path.join("chess_game\chess_images", "bp.png")), (Square, Square))
+Black_pawn = pygame.transform.scale(pygame.image.load(os.path.join("chess_game\chess_images", "bP.png")), (Square, Square))
 Black_Queen = pygame.transform.scale(pygame.image.load(os.path.join("chess_game\chess_images", "bQ.png")), (Square, Square))
 Black_Rook = pygame.transform.scale(pygame.image.load(os.path.join("chess_game\chess_images", "bR.png")), (Square, Square))
 #White pieces
