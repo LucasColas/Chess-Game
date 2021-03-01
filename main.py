@@ -12,7 +12,7 @@ Board = newBoard(Width, Height, Win)
 def update_window(Win):
 
     Board.create_Board()
-    Board.draw_test()
+    #Board.draw_test()
     pygame.display.update()
 
 def main():
