@@ -19,7 +19,7 @@ class newBoard:
         #pygame.draw.rect(self.Win, cornsilk, (160, 160,480, 480))
 
     def create_Board(self):
-        self.Win.fill(Black)
+        self.Win.fill(brown)
 
         for row in range(Rows):
             for col in range(row%2, Cols,2):
