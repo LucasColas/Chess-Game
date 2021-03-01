@@ -1,9 +1,6 @@
 import pygame
 from .constants import *
 
-def test_piece(Win):
-    Win.blit(Black_King, (25,25))
-
 
 class Piece:
     def __init__(self, image,x,y):
