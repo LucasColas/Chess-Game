@@ -1,8 +1,8 @@
 import pygame
-import constants
+from .constants import *
 
-#def test_piece(Win):
-    #Win.blit(constants.Black_King, (25,25))
+def test_piece(Win):
+    Win.blit(Black_King, (25,25))
 
 
 class Piece:
@@ -33,7 +33,7 @@ class Pawn(Piece):
         Win.blit(self.image, (self.x, self.y))
 
     def available_moves(self):
-        
+
         if self.first_move:
             self.first_move = False
 
