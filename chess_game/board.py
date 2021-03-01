@@ -2,7 +2,7 @@ import pygame
 
 from .constants import Width, Height, Rows,Cols,Square
 from .constants import White, brown, Black
-from .constants import White_Knight
+from .constants import Black_pawn
 
 
 class newBoard:
@@ -29,7 +29,7 @@ class newBoard:
         self.Win.blit(White_Knight, (self.Width//2, self.Width//2))
 
     def draw_pieces(self):
-        for row in self.Rows:
-            for col in self.Cols:
+        for row in range(self.Rows):
+            for col in range(self.Cols):
                 if row == 1:
-                    self.Win.blit(White_pawn, (Square*col, Square*row))
+                    self.Win.blit(Black_pawn, (Square*col, Square*row))
