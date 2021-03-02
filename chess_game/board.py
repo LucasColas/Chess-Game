@@ -18,7 +18,7 @@ class newBoard:
     #def create_GameBoard(self): #Add outline
         #pygame.draw.rect(self.Win, cornsilk, (160, 160,480, 480))
 
-    def create_Board(self):
+    def draw_Board(self):
         self.Win.fill(brown)
 
         for row in range(Rows):
@@ -31,5 +31,4 @@ class newBoard:
     def draw_pieces(self):
         for row in range(self.Rows):
             for col in range(self.Cols):
-                if row == 1:
-                    self.Win.blit(Black_pawn, (Square*col, Square*row))
+                pass
