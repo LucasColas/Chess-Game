@@ -9,6 +9,13 @@ class Piece:
     def available_moves(self):
         pass
 
+    def calc_pos(self):
+        self.x = self.row*self.Square
+        self.y = self.row*self.Square
+
+    def draw_piece(self,Win):
+        Win.blit(self.image, (self.x, self.y))
+
 
 class Pawn(Piece):
     def __init__(self,Square, image,row,col):
@@ -22,12 +29,7 @@ class Pawn(Piece):
         self.image = image
         self.calc_pos()
 
-    def calc_pos(self):
-        self.x = self.row*self.Square
-        self.y = self.row*self.Square
 
-    def draw_piece(self,Win):
-        Win.blit(self.image, (self.x, self.y))
 
     def available_moves(self):
 
