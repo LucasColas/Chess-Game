@@ -3,23 +3,7 @@ from .constants import *
 
 
 class Piece:
-    def __init__(self, image,x,y):
-        self.image = image
-
-    def available_moves(self):
-        pass
-
-    def calc_pos(self):
-        self.x = self.row*self.Square
-        self.y = self.row*self.Square
-
-    def draw_piece(self,Win):
-        Win.blit(self.image, (self.x, self.y))
-
-
-class Pawn(Piece):
-    def __init__(self,Square, image,row,col):
-        super().__init__(image)
+    def __init__(self, Square,image,row,col):
         self.Square = Square
         self.row = row
         self.col = col
@@ -29,6 +13,20 @@ class Pawn(Piece):
         self.image = image
         self.calc_pos()
 
+    def available_moves(self):
+        pass
+
+    def calc_pos(self):
+        self.x = self.col*self.Square
+        self.y = self.row*self.Square
+
+    def draw_piece(self,Win):
+        Win.blit(self.image, (self.x, self.y))
+
+
+class Pawn(Piece):
+    def __init__(self,Square, image,row,col):
+        super().__init__(Square, image,row,col)
 
 
     def available_moves(self):

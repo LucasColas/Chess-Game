@@ -10,11 +10,13 @@ class newBoard:
     def __init__(self, Width, Height, Rows, Cols, Win):
         self.Width = Width
         self.Height = Height
+        self.Square = Width//8
         self.GameBoard = self.Width//2
         self.Win = Win
         self.Rows = Rows
         self.Cols = Cols
         self.Board = []
+        self.create_Board()
 
 
     def create_Board(self):
@@ -22,10 +24,11 @@ class newBoard:
             self.Board.append([])
             for col in range(self.Cols):
                 if row == 1:
-                    self.Board[row].append()
+                    self.Board[row].append(Pawn(self.Square,Black_pawn,row,col))
 
-    def create_Pieces(self):
-        pass
+                else:
+                    self.Board[row].append(0)
+
 
 
     def draw_Board(self):
@@ -41,4 +44,5 @@ class newBoard:
     def draw_pieces(self):
         for row in range(self.Rows):
             for col in range(self.Cols):
-                pass
+                if self.Board[row][col] != 0:
+                    self.Board[row][col].draw_piece(self.Win)
