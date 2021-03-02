@@ -25,7 +25,9 @@ class newBoard:
             for col in range(self.Cols):
                 if row == 1:
                     self.Board[row].append(Pawn(self.Square,Black_pawn,row,col))
-
+                if row == 0:
+                    if col == 0 or col == 7:
+                        self.Board[row].append()
                 else:
                     self.Board[row].append(0)
 

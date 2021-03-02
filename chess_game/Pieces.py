@@ -35,8 +35,8 @@ class Pawn(Piece):
             self.first_move = False
 
 class Rook(Piece):
-    def __init__(self, image,x,y):
-        super().__init__(image)
+    def __init__(self, Square, image,row,col):
+        super().__init__(Square, image,row,col)
 
 class Bishop(Piece):
     def __init__(self, image,x,y):
