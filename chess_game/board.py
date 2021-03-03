@@ -21,7 +21,9 @@ class newBoard:
 
     def create_Board(self):
         for row in range(self.Rows):
+
             self.Board.append([0 for i in range(self.Cols)])
+
             for col in range(self.Cols):
                 if row == 1:
                     self.Board[row][col] = Pawn(self.Square,Black_pawn,row,col)
@@ -33,7 +35,7 @@ class newBoard:
                     if row == 7:
                         self.Board[row][col] = Rook(self.Square, White_Rook,row,col)
 
-                
+
 
 
         print(self.Board)
