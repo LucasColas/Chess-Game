@@ -27,7 +27,8 @@ class newBoard:
             for col in range(self.Cols):
                 if row == 1:
                     self.Board[row][col] = Pawn(self.Square,Black_pawn,row,col)
-
+                if row == 6:
+                    self.Board[row][col] = Pawn(self.Square,White_pawn,row,col)
                 if col == 0 or col == 7:
                     if row == 0:
                         self.Board[row][col] = Rook(self.Square, Black_Rook,row,col)
@@ -35,10 +36,6 @@ class newBoard:
                     if row == 7:
                         self.Board[row][col] = Rook(self.Square, White_Rook,row,col)
 
-
-
-
-        print(self.Board)
 
 
     def draw_Board(self):
