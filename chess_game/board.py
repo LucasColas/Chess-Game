@@ -34,12 +34,11 @@ class newBoard:
                     if row == 7:
                         self.Board[row].append(Rook(self.Square, White_Rook,row,col))
 
-                    else:
-                        self.Board[row].append(0)
                 else:
                     self.Board[row].append(0)
 
 
+        print(self.Board[0])
 
 
     def draw_Board(self):
