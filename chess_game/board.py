@@ -23,6 +23,7 @@ class newBoard:
         for row in range(self.Rows):
             self.Board.append([])
             for col in range(self.Cols):
+                print("row : ", row, "col : ", col)
                 if row == 1:
                     self.Board[row].append(Pawn(self.Square,Black_pawn,row,col))
 
@@ -35,6 +36,7 @@ class newBoard:
 
                 else:
                     self.Board[row].append(0)
+
 
 
 
@@ -51,5 +53,6 @@ class newBoard:
     def draw_pieces(self):
         for row in range(self.Rows):
             for col in range(self.Cols):
+                print("row ",row, "col ", col)
                 if self.Board[row][col] != 0:
                     self.Board[row][col].draw_piece(self.Win)
