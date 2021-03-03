@@ -37,7 +37,6 @@ class newBoard:
                         self.Board[row][col] = Rook(self.Square, White_Rook,row,col)
 
 
-
     def draw_Board(self):
         self.Win.fill(brown)
 
