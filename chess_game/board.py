@@ -1,8 +1,5 @@
 import pygame
 
-from .constants import Width, Height, Rows,Cols,Square
-from .constants import White, brown, Black
-from .constants import Black_pawn
 from .Pieces import *
 
 
