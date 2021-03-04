@@ -5,6 +5,7 @@ from chess_game.board import newBoard
 
 
 pygame.init()
+clock = pygame.time.Clock()
 
 Win = pygame.display.set_mode((Width, Height))
 Board = newBoard(Width, Height, Rows, Cols, Win)
@@ -22,9 +23,12 @@ def main():
     White = "White"
     Black = "Black"
     turn = White
+    FPS = 60
 
 
     while run:
+        clock.tick(FPS)
+
         update_window(Win)
 
         for event in pygame.event.get():
@@ -42,7 +46,7 @@ def main():
 
                 if turn == White:
                     turn = Black
-                    
+
                 else:
                     turn = White
 
