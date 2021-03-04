@@ -35,11 +35,17 @@ def main():
             if event.type == pygame.KEYDOWN and game_over:
                 pass
 
-            if event.type == pygame.MOUSEBUTTONDOWN and turn == White:
+            if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
 
                 if pygame.mouse.get_pressed()[0]:
                     location = pygame.mouse.get_pos()
+
+                if turn == White:
+                    turn = Black
                     
+                else:
+                    turn = White
+
 
 
 
