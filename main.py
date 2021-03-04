@@ -18,6 +18,11 @@ def update_window(Win):
 
 def main():
     run = True
+    game_over = False
+    White = "White"
+    Black = "Black"
+    turn = White
+
 
     while run:
         update_window(Win)
@@ -26,5 +31,16 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
                 quit()
+
+            if event.type == pygame.KEYDOWN and game_over:
+                pass
+
+            if event.type == pygame.MOUSEBUTTONDOWN and turn == White:
+
+                if pygame.mouse.get_pressed()[0]:
+                    location = pygame.mouse.get_pos()
+                    
+
+
 
 main()
