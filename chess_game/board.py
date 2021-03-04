@@ -37,6 +37,10 @@ class newBoard:
                         self.Board[row][col] = Knight(self.Square, Black_Knight,row,col)
                     if col == 2 or col == 5:
                         self.Board[row][col] = Bishop(self.Square, Black_Bishop,row,col)
+                    if col == 3:
+                        self.Board[row][col] = Queen(self.Square, Black_Queen,row,col)
+                    if col == 4:
+                        self.Board[row][col] = Queen(self.Square, Black_King,row,col)
 
                 if row == 7:
                     if col == 0 or col  == 7:
@@ -47,6 +51,13 @@ class newBoard:
 
                     if col == 2 or col == 5:
                         self.Board[row][col] = Bishop(self.Square, White_bishop,row,col)
+
+                    if col == 3:
+                        self.Board[row][col] = Queen(self.Square, White_Queen,row,col)
+
+                    if col == 4:
+                        self.Board[row][col] = Queen(self.Square, White_King,row,col)
+
 
 
     def draw_Board(self):

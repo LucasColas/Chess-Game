@@ -50,8 +50,8 @@ class Knight(Piece):
         super().__init__(Square, image,row,col)
 
 class Queen(Piece):
-    def __init__(self, image,x,y):
-        super().__init__(image)
+    def __init__(self, Square, image,row,col):
+        super().__init__(Square, image,row,col)
 
 class King(Piece):
     def __init__(self, image,x,y):
