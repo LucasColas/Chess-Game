@@ -6,6 +6,7 @@ class Piece:
     def __init__(self, Square,image,color,row,col):
         self.Square = Square
         self.image = image
+        self.color = color
         self.row = row
         self.col = col
         self.x = 0
@@ -15,7 +16,11 @@ class Piece:
         self.calc_pos()
 
     def check_color(self):
-        pass
+        if self.color == "Black":
+            pass
+
+        if self.color == "White":
+            pass 
 
     def available_moves(self):
         pass
