@@ -28,7 +28,6 @@ class newBoard:
                     self.Board[row][col] = Pawn(self.Square,White_pawn,"White",row,col)
 
                 if row == 0:
-
                     if col == 0 or col == 7:
                         self.Board[row][col] = Rook(self.Square, Black_Rook,"Black",row,col)
 
@@ -39,7 +38,7 @@ class newBoard:
                         self.Board[row][col] = Bishop(self.Square, Black_Bishop,"Black",row,col)
 
                     if col == 3:
-                        self.Board[row][col] = Queen(self.Square, Black_Queen,"Black","Black",row,col)
+                        self.Board[row][col] = Queen(self.Square, Black_Queen,"Black",row,col)
 
                     if col == 4:
                         self.Board[row][col] = King(self.Square, Black_King,"Black",row,col)
