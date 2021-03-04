@@ -3,7 +3,7 @@ from .constants import *
 
 
 class Piece:
-    def __init__(self, Square,image,row,col):
+    def __init__(self, Square,image,color,row,col):
         self.Square = Square
         self.image = image
         self.row = row
@@ -14,7 +14,7 @@ class Piece:
         self.image = image
         self.calc_pos()
 
-    def check_color(self, piece):
+    def check_color(self):
         pass
 
     def available_moves(self):
@@ -29,8 +29,8 @@ class Piece:
 
 
 class Pawn(Piece):
-    def __init__(self,Square, image,row,col):
-        super().__init__(Square, image,row,col)
+    def __init__(self,Square, image,color,row,col):
+        super().__init__(Square, image,color,row,col)
 
 
     def available_moves(self):
@@ -39,24 +39,24 @@ class Pawn(Piece):
             self.first_move = False
 
 class Rook(Piece):
-    def __init__(self, Square, image,row,col):
-        super().__init__(Square, image,row,col)
+    def __init__(self, Square, image,color,row,col):
+        super().__init__(Square, image,color,row,col)
 
     def test(self):
         print("test")
 
 class Bishop(Piece):
-    def __init__(self, Square, image,row,col):
-        super().__init__(Square, image,row,col)
+    def __init__(self, Square, image,color,row,col):
+        super().__init__(Square, image,color,row,col)
 
 class Knight(Piece):
-    def __init__(self, Square, image,row,col):
-        super().__init__(Square, image,row,col)
+    def __init__(self, Square, image,color,row,col):
+        super().__init__(Square, image,color,row,col)
 
 class Queen(Piece):
-    def __init__(self, Square, image,row,col):
-        super().__init__(Square, image,row,col)
+    def __init__(self, Square, image,color,row,col):
+        super().__init__(Square, image,color,row,col)
 
 class King(Piece):
-    def __init__(self, image,x,y):
-        super().__init__(image)
+    def __init__(self,Square, image,color,row,col):
+        super().__init__(Square, image,color,row,col)
