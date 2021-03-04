@@ -20,7 +20,7 @@ class Piece:
             pass
 
         if self.color == "White":
-            pass 
+            pass
 
     def available_moves(self):
         pass
@@ -36,6 +36,7 @@ class Piece:
 class Pawn(Piece):
     def __init__(self,Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
+        self.first_move = True
 
 
     def available_moves(self):
