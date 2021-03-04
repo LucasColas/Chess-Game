@@ -5,6 +5,7 @@ from .constants import *
 class Piece:
     def __init__(self, Square,image,row,col):
         self.Square = Square
+        self.image = image
         self.row = row
         self.col = col
         self.x = 0
@@ -12,6 +13,9 @@ class Piece:
         self.first_move = True
         self.image = image
         self.calc_pos()
+
+    def check_color(self, piece):
+        pass
 
     def available_moves(self):
         pass
