@@ -33,9 +33,16 @@ class newBoard:
                     if row == 0:
                         self.Board[row][col] = Rook(self.Square, Black_Rook,row,col)
 
-
                     if row == 7:
                         self.Board[row][col] = Rook(self.Square, White_Rook,row,col)
+
+                if col == 1 or col == 6:
+                    if row == 0:
+                        self.Board[row][col] = Knight(self.Square, Black_Knight,row,col)
+
+                    if row == 7:
+                        self.Board[row][col] = Knight(self.Square, White_Knight,row,col)
+                        
 
 
     def draw_Board(self):
