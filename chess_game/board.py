@@ -33,6 +33,7 @@ class newBoard:
                     if row == 0:
                         self.Board[row][col] = Rook(self.Square, Black_Rook,row,col)
 
+
                     if row == 7:
                         self.Board[row][col] = Rook(self.Square, White_Rook,row,col)
 
