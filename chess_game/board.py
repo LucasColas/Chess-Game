@@ -1,5 +1,4 @@
 import pygame
-
 from .Pieces import *
 
 
