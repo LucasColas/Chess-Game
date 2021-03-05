@@ -8,4 +8,5 @@ class Game:
         pass
 
 
-    def select(self,)
+    def select(self,row,col):
+        pass
