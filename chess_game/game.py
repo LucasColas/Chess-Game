@@ -6,3 +6,6 @@ class Game:
 
     def reset(self):
         pass
+
+
+    def select(self,)
