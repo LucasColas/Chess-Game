@@ -15,6 +15,8 @@ class Piece:
         self.image = image
         self.calc_pos()
 
+
+
     def check_color(self):
         if self.color == "Black":
             pass
@@ -24,6 +26,7 @@ class Piece:
 
     def available_moves(self):
         pass
+
 
     def calc_pos(self):
         self.x = self.col*self.Square

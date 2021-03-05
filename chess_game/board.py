@@ -58,6 +58,12 @@ class newBoard:
                     if col == 4:
                         self.Board[row][col] = King(self.Square, White_King,"White",row,col)
 
+    def select_pieces(self,x,y):
+        if self.Board[y][x] != 0:
+            
+
+    def select_pieces(self,x,y):
+        pass
 
     def draw_Board(self):
         self.Win.fill(brown)
