@@ -40,6 +40,7 @@ class Pawn(Piece):
     def __init__(self,Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
         self.first_move = True
+        self.type = "Pawn"
 
 
     def available_moves(self):
@@ -50,22 +51,26 @@ class Pawn(Piece):
 class Rook(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
+        self.type = "Rook"
 
-    def test(self):
-        print("test")
+
 
 class Bishop(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
+        self.type = "Bishop"
 
 class Knight(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
+        self.type = "Knight"
 
 class Queen(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
+        self.type = "Queen"
 
 class King(Piece):
     def __init__(self,Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
+        self.type = "King"
