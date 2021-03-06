@@ -1,7 +1,7 @@
 import pygame
 
 from chess_game.constants import *
-from chess_game.board import newBoard
+from chess_game.game import Game
 
 
 pygame.init()
@@ -10,12 +10,7 @@ clock = pygame.time.Clock()
 Win = pygame.display.set_mode((Width, Height))
 Board = newBoard(Width, Height, Rows, Cols, Win)
 
-def update_window(Win):
 
-    Board.draw_Board()
-    #Board.draw_test()
-    Board.draw_pieces()
-    pygame.display.update()
 
 def main():
     run = True
@@ -24,12 +19,13 @@ def main():
     Black = "Black"
     turn = White
     FPS = 60
+    game = Game(Width,Height,Rows,Cols,Win)
 
 
     while run:
         clock.tick(FPS)
 
-        update_window(Win)
+        #Board.update_window(Win)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

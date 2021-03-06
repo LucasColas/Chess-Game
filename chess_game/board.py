@@ -14,6 +14,7 @@ class newBoard:
         self.Board = []
         self.create_Board()
 
+    
 
     def create_Board(self):
         for row in range(self.Rows):
