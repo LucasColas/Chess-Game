@@ -6,6 +6,7 @@ class Game:
     def __init__(self, Width, Height, Rows, Cols, Win):
         self.Win = Win
         self.Board = newBoard(Width, Height, Rows, Cols,Win)
+        self.selected = None
 
     def update_window(self):
 
@@ -19,4 +20,9 @@ class Game:
 
 
     def select(self,row,col):
-        pass
+        if self.select:
+            move = self._move(row,col)
+
+
+    def _move(self,row,col):
+        pass 

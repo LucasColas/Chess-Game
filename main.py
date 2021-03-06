@@ -18,8 +18,6 @@ def get_positions(x,y):
 def main():
     run = True
     game_over = False
-    White = "White"
-    Black = "Black"
     turn = White
     FPS = 60
     game = Game(Width,Height,Rows,Cols,Win)
