@@ -16,7 +16,6 @@ class Piece:
         self.calc_pos()
 
 
-
     def check_color(self):
         if self.color == "Black":
             pass
