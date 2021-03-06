@@ -9,6 +9,11 @@ clock = pygame.time.Clock()
 
 Win = pygame.display.set_mode((Width, Height))
 
+def get_positions(x,y):
+    row = x//Square
+    col = y//Square
+    return row,col
+
 
 def main():
     run = True
