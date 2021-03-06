@@ -14,7 +14,7 @@ class newBoard:
         self.Board = []
         self.create_Board()
 
-    
+
 
     def create_Board(self):
         for row in range(self.Rows):
@@ -72,6 +72,5 @@ class newBoard:
     def draw_pieces(self):
         for row in range(self.Rows):
             for col in range(self.Cols):
-
                 if self.Board[row][col] != 0:
                     self.Board[row][col].draw_piece(self.Win)

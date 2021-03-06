@@ -8,8 +8,6 @@ pygame.init()
 clock = pygame.time.Clock()
 
 Win = pygame.display.set_mode((Width, Height))
-Board = newBoard(Width, Height, Rows, Cols, Win)
-
 
 
 def main():
@@ -25,7 +23,7 @@ def main():
     while run:
         clock.tick(FPS)
 
-        #Board.update_window(Win)
+        game.update_window()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
