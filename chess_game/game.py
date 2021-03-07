@@ -8,7 +8,7 @@ class Game:
         self.Board = newBoard(Width, Height, Rows, Cols,Win)
         self.selected = None
         self.turn = White
-        self.valid_moves = {}
+        self.valid_moves = []
 
     def update_window(self):
 
