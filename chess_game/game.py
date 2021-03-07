@@ -29,7 +29,6 @@ class Game:
     def select(self,row,col):
         if self.selected:
             move = self._move(row,col)
-
             if not move:
                 self.selected = None
                 self.select(row,col)
