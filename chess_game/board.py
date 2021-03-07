@@ -59,6 +59,10 @@ class newBoard:
                     if col == 4:
                         self.Board[row][col] = King(self.Square, White_King,"White",row,col)
 
+    def get_piece(self,row,col):
+        return self.Board[row][col]
+
+
     def draw_Board(self):
         self.Win.fill(brown)
 

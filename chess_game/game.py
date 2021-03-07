@@ -20,9 +20,14 @@ class Game:
 
 
     def select(self,row,col):
-        if self.select:
+        if self.selected:
             move = self._move(row,col)
 
+            if not move:
+                self.selected = None
+                self.select(row,col)
+                
+        piece = self.Board.get_piece(row,col)
 
     def _move(self,row,col):
-        pass 
+        pass
