@@ -16,12 +16,6 @@ class Piece:
         self.calc_pos()
 
 
-    def check_color(self):
-        if self.color == "Black":
-            pass
-
-        if self.color == "White":
-            pass
 
     def available_moves(self):
         pass
