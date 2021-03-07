@@ -42,4 +42,5 @@ class Game:
     def _move(self,row,col):
         piece = self.Board.get_piece(row,col)
 
-        if self.selected and piece == 0
+        if self.selected and piece == 0 and (row,col) in self.valid_moves:
+            pass
