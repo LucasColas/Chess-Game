@@ -26,8 +26,10 @@ class Game:
             if not move:
                 self.selected = None
                 self.select(row,col)
-                
+
         piece = self.Board.get_piece(row,col)
+        if piece != 0:
+            self.selected = piece
 
     def _move(self,row,col):
         pass
