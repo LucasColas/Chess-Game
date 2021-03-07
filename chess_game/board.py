@@ -64,7 +64,7 @@ class newBoard:
 
     def move(self,piece,row,col):
         self.Board[piece.row][piece.col], self.Board[row][col] = self.Board[row][col], self.Board[piece.row][piece.col]
-
+        piece.piece_move(row,col)
 
     def draw_Board(self):
         self.Win.fill(brown)

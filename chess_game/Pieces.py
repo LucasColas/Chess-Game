@@ -26,6 +26,10 @@ class Piece:
     def available_moves(self):
         pass
 
+    def piece_move(self,row,col):
+        self.row = row
+        self.col = row
+        self.calc_pos()
 
     def calc_pos(self):
         self.x = self.col*self.Square
