@@ -42,11 +42,7 @@ def main():
                 if pygame.mouse.get_pressed()[0]:
                     location = pygame.mouse.get_pos()
 
-                if turn == White:
-                    turn = Black
-
-                else:
-                    turn = White
+                
 
 
 

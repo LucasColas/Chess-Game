@@ -7,6 +7,7 @@ class Game:
         self.Win = Win
         self.Board = newBoard(Width, Height, Rows, Cols,Win)
         self.selected = None
+        self.turn = White
 
     def update_window(self):
 
@@ -18,6 +19,11 @@ class Game:
     def reset(self):
         pass
 
+    def change_turn(self):
+        if self.turn == White:
+            self.turn = Black
+        else:
+            self.turn = White
 
     def select(self,row,col):
         if self.selected:
