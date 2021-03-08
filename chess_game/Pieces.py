@@ -19,7 +19,7 @@ class Piece:
 
     def available_moves(self,row,col,Board):
         available_moves = []
-        for r in range(len(self.Board)):
+        for r in range(len(Board)):
             for c in range(len(row)):
                 if Board[r][c] == 0:
                     available_moves.append((r,c))
@@ -46,16 +46,17 @@ class Pawn(Piece):
         self.first_move = True
         self.type = "Pawn"
 
-
+    """
     def available_moves(self):
 
         if self.first_move:
             self.first_move = False
+    """
 
 class Rook(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
-        self.type = "Rook"
+
 
 
 

@@ -27,16 +27,22 @@ class Game:
             self.turn = White
 
     def select(self,row,col):
+        #print(self.Board.Board)
         if self.selected:
+            print("in self.selected")
             move = self._move(row,col)
+            print("move", move)
             if not move:
+                print("not move")
                 self.selected = None
                 self.select(row,col)
 
         piece = self.Board.get_piece(row,col)
+        print("piece", piece)
         if piece != 0:
             self.selected = piece
-            self.valid_moves = piece.available_moves(row,col,self.Board)
+            print(self.selected)
+            self.valid_moves = piece.available_moves(row,col,self.Board.Board)
 
 
     def _move(self,row,col):
