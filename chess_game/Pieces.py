@@ -17,12 +17,12 @@ class Piece:
 
 
 
-    def available_moves(self,Board):
+    def available_moves(self,row,col,Board):
         available_moves = []
-        for row in range(len(self.Board)):
-            for col in range(len(row)):
-                if Board[row][col] == 0:
-                    available_moves.append((row,col))
+        for r in range(len(self.Board)):
+            for c in range(len(row)):
+                if Board[r][c] == 0:
+                    available_moves.append((r,c))
 
         return available_moves
 
