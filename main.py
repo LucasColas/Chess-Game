@@ -10,8 +10,9 @@ clock = pygame.time.Clock()
 Win = pygame.display.set_mode((Width, Height))
 
 def get_positions(x,y):
-    row = x//Square
-    col = y//Square
+    row = y//Square
+    col = x//Square
+
     return row,col
 
 
@@ -41,7 +42,6 @@ def main():
 
                 if pygame.mouse.get_pressed()[0]:
                     location = pygame.mouse.get_pos()
-
                     row,col = get_positions(location[0],location[1])
                     game.select(row,col)
 

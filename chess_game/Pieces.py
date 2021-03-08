@@ -19,9 +19,9 @@ class Piece:
 
     def available_moves(self,row,col,Board):
         available_moves = []
-        for r in range(len(Board)):
-            for c in range(len(row)):
-                if Board[r][c] == 0:
+        for r_index,r in enumerate(Board):
+            for c in range(len(r)):
+                if Board[r_index][c] == 0:
                     available_moves.append((r,c))
 
         return available_moves
