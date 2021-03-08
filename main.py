@@ -42,7 +42,8 @@ def main():
                 if pygame.mouse.get_pressed()[0]:
                     location = pygame.mouse.get_pos()
 
-                
+                    row,col = get_positions(location[0],location[1])
+                    game.select(row,col)
 
 
 
