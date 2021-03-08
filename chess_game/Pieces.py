@@ -22,7 +22,7 @@ class Piece:
         for r_index,r in enumerate(Board):
             for c in range(len(r)):
                 if Board[r_index][c] == 0:
-                    available_moves.append((r,c))
+                    available_moves.append((r_index,c))
 
         return available_moves
 
