@@ -17,7 +17,7 @@ class Piece:
 
 
 
-    def available_moves(self):
+    def available_moves(self,Board):
         pass
 
     def piece_move(self,row,col):
