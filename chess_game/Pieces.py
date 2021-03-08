@@ -18,7 +18,14 @@ class Piece:
 
 
     def available_moves(self,Board):
-        pass
+        available_moves = []
+        for row in range(len(self.Board)):
+            for col in range(len(row)):
+                if Board[row][col] == 0:
+                    available_moves.append((row,col))
+
+        return available_moves
+
 
     def piece_move(self,row,col):
         self.row = row
