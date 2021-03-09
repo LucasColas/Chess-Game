@@ -30,11 +30,13 @@ class Piece:
     def piece_move(self,row,col):
         self.row = row
         self.col = row
+        print(self.row, self.col)
         self.calc_pos()
 
     def calc_pos(self):
         self.x = self.col*self.Square
         self.y = self.row*self.Square
+
 
     def draw_piece(self,Win):
         Win.blit(self.image, (self.x, self.y))
