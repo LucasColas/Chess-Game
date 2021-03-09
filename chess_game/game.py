@@ -29,26 +29,26 @@ class Game:
     def select(self,row,col):
         #print(self.Board.Board)
         if self.selected:
-            print("in self.selected")
+            #print("in self.selected")
             move = self._move(row,col)
-            print("move", move)
+            #print("move", move)
             if not move:
-                print("not move")
+                #print("not move")
                 self.selected = None
                 self.select(row,col)
 
         piece = self.Board.get_piece(row,col)
-        print("piece", piece)
+        #print("piece", piece)
         if piece != 0:
             self.selected = piece
-            print(self.selected)
+            #print(self.selected)
             self.valid_moves = piece.available_moves(row,col,self.Board.Board)
 
 
     def _move(self,row,col):
-        print("in _move")
+        #print("in _move")
         piece = self.Board.get_piece(row,col)
-        print("valid_moves", self.valid_moves)
+        #print("valid_moves", self.valid_moves)
         if self.selected and piece == 0 and (row,col) in self.valid_moves:
             self.Board.move(self.selected,row,col)
 

@@ -63,6 +63,7 @@ class newBoard:
         return self.Board[row][col]
 
     def move(self,piece,row,col):
+        print(row,col)
         self.Board[piece.row][piece.col], self.Board[row][col] = self.Board[row][col], self.Board[piece.row][piece.col]
         piece.piece_move(row,col)
 
