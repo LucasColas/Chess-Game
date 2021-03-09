@@ -11,23 +11,14 @@ class Piece:
         self.col = col
         self.x = 0
         self.y = 0
-        self.first_move = True
         self.image = image
+        self.available_moves = []
         self.calc_pos()
 
 
 
-    def available_moves(self,row,col,Board):
-        available_moves = []
-        for r_index,r in enumerate(Board):
-            for c in range(len(r)):
-                if Board[r_index][c] == 0:
-                    available_moves.append((r_index,c))
 
-        return available_moves
-
-
-    def piece_move(self,row,col):    
+    def piece_move(self,row,col):
         self.row = row
         self.col = col
         self.calc_pos()
@@ -40,19 +31,42 @@ class Piece:
     def draw_piece(self,Win):
         Win.blit(self.image, (self.x, self.y))
 
+    def draw_available_moves(self,Win):
+        if len(available_moves) > 0:
+            for pos in available_moves:
+                pygame.draw.circle(Win, Green, (pos[0]*self.Square + self.Square//2, pos[1]*self.Square + self.Square//2),self.Square//4)
+
 
 class Pawn(Piece):
     def __init__(self,Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
         self.first_move = True
-        self.type = "Pawn"
 
-    """
-    def available_moves(self):
+
+    def available_moves(self,row,col,Board):
+
+
+        if Board[row-1][col] == 0:
+            self.available_moves.append((row-1,col))
 
         if self.first_move:
+            if Board[row-2][col] == 0:
+                self.available_moves.append((row-2,col))
             self.first_move = False
-    """
+
+        if Board[row-1][col-1] != 0:
+            piece = Board[row-1][col-1]
+            if piece.color != self.color:
+                self.available_moves.append((row-1,col-1))
+
+        if Board[row-1][col+1] != 0:
+            piece = Board[row-1][col+1]
+            if piece.color != self.color:
+                self.available_moves.append((row-1,col+1))
+
+
+
+
 
 class Rook(Piece):
     def __init__(self, Square, image,color,row,col):
@@ -64,19 +78,18 @@ class Rook(Piece):
 class Bishop(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
-        self.type = "Bishop"
+
 
 class Knight(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
-        self.type = "Knight"
+
 
 class Queen(Piece):
     def __init__(self, Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
-        self.type = "Queen"
+
 
 class King(Piece):
     def __init__(self,Square, image,color,row,col):
         super().__init__(Square, image,color,row,col)
-        self.type = "King"

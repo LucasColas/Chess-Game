@@ -14,6 +14,7 @@ beige = (245,245,220)
 brown_chocolate = (210,105,30)
 brown = (87,16,16)
 cornsilk = (255,248,220)
+Green = (0,255,0)
 
 #Images
 #Black pieces
