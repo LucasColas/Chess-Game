@@ -28,8 +28,9 @@ class Piece:
 
 
     def piece_move(self,row,col):
+        print("in piece_move", row,col)
         self.row = row
-        self.col = row
+        self.col = col
         print("piece_move", self.row, self.col)
         self.calc_pos()
 

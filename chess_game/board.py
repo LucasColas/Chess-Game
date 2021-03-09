@@ -63,9 +63,11 @@ class newBoard:
         return self.Board[row][col]
 
     def move(self,piece,row,col):
-        print(row,col)
+        print("move",row,col)
+        print("piece row and col", piece.row,piece.col)
         self.Board[piece.row][piece.col], self.Board[row][col] = self.Board[row][col], self.Board[piece.row][piece.col]
         piece.piece_move(row,col)
+        print("after piece move", row,col)
 
     def draw_Board(self):
         self.Win.fill(brown)
