@@ -30,7 +30,7 @@ class Piece:
     def piece_move(self,row,col):
         self.row = row
         self.col = row
-        print(self.row, self.col)
+        print("piece_move", self.row, self.col)
         self.calc_pos()
 
     def calc_pos(self):

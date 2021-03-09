@@ -28,6 +28,7 @@ class Game:
 
     def select(self,row,col):
         #print(self.Board.Board)
+        print("select / row col", row,col)
         if self.selected:
             #print("in self.selected")
             move = self._move(row,col)
@@ -47,6 +48,7 @@ class Game:
 
     def _move(self,row,col):
         #print("in _move")
+        print("_move / row,col", row,col)
         piece = self.Board.get_piece(row,col)
         #print("valid_moves", self.valid_moves)
         if self.selected and piece == 0 and (row,col) in self.valid_moves:
