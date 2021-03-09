@@ -39,18 +39,13 @@ class Game:
                 self.select(row,col)
 
         piece = self.Board.get_piece(row,col)
-        #print("piece", piece)
         if piece != 0:
             self.selected = piece
-            #print(self.selected)
             self.valid_moves = piece.available_moves(row,col,self.Board.Board)
 
 
     def _move(self,row,col):
-        #print("in _move")
-        print("_move / row,col", row,col)
         piece = self.Board.get_piece(row,col)
-        #print("valid_moves", self.valid_moves)
         if self.selected and piece == 0 and (row,col) in self.valid_moves:
             self.Board.move(self.selected,row,col)
 

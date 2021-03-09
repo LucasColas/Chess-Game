@@ -27,11 +27,9 @@ class Piece:
         return available_moves
 
 
-    def piece_move(self,row,col):
-        print("in piece_move", row,col)
+    def piece_move(self,row,col):    
         self.row = row
         self.col = col
-        print("piece_move", self.row, self.col)
         self.calc_pos()
 
     def calc_pos(self):
