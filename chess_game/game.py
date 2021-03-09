@@ -27,14 +27,10 @@ class Game:
             self.turn = White
 
     def select(self,row,col):
-        #print(self.Board.Board)
-        print("select / row col", row,col)
+
         if self.selected:
-            #print("in self.selected")
             move = self._move(row,col)
-            #print("move", move)
             if not move:
-                #print("not move")
                 self.selected = None
                 self.select(row,col)
 
