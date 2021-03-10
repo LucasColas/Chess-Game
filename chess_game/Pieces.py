@@ -16,8 +16,6 @@ class Piece:
         self.calc_pos()
 
 
-
-
     def piece_move(self,row,col):
         self.row = row
         self.col = col
@@ -64,6 +62,7 @@ class Pawn(Piece):
             if piece.color != self.color:
                 self.available_moves.append((row-1,col+1))
 
+        return self.available_moves
 
 
 
