@@ -3,10 +3,10 @@ from .Pieces import *
 
 
 class newBoard:
-    def __init__(self, Width, Height, Rows, Cols, Win):
+    def __init__(self, Width, Height, Rows, Cols, Square, Win):
         self.Width = Width
         self.Height = Height
-        self.Square = Width//8
+        self.Square = Square
         self.GameBoard = self.Width//2
         self.Win = Win
         self.Rows = Rows

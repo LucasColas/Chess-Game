@@ -3,9 +3,10 @@ from .board import newBoard
 from .constants import *
 
 class Game:
-    def __init__(self, Width, Height, Rows, Cols, Win):
+    def __init__(self, Width, Height, Rows, Cols, Square,Win):
         self.Win = Win
-        self.Board = newBoard(Width, Height, Rows, Cols,Win)
+        self.Board = newBoard(Width, Height, Rows, Cols,Square, Win)
+        self.Square = Square
         self.selected = None
         self.turn = White
         self.valid_moves = []
@@ -53,6 +54,6 @@ class Game:
         return False
 
     def draw_available_moves(self):
-        if len(available_moves) > 0:
-            for pos in available_moves:
+        if len(self.valid_moves) > 0:
+            for pos in self.valid_moves:
                 pygame.draw.circle(self.Win, Green, (pos[0]*self.Square + self.Square//2, pos[1]*self.Square + self.Square//2),self.Square//4)

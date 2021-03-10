@@ -21,7 +21,7 @@ def main():
     game_over = False
     turn = White
     FPS = 60
-    game = Game(Width,Height,Rows,Cols,Win)
+    game = Game(Width,Height,Rows,Cols,Square,Win)
 
 
     while run:
