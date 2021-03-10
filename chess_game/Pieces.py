@@ -29,11 +29,7 @@ class Piece:
     def draw_piece(self,Win):
         Win.blit(self.image, (self.x, self.y))
 
-    def draw_available_moves(self,Win):
-        if len(available_moves) > 0:
-            for pos in available_moves:
-                pygame.draw.circle(Win, Green, (pos[0]*self.Square + self.Square//2, pos[1]*self.Square + self.Square//2),self.Square//4)
-
+    
 
 class Pawn(Piece):
     def __init__(self,Square, image,color,row,col):
