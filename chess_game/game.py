@@ -57,4 +57,4 @@ class Game:
         if len(self.valid_moves) > 0:
             for pos in self.valid_moves:
                 row,col = pos[0],pos[1]
-                pygame.draw.circle(self.Win, Green, (col*self.Square + self.Square//2, row*self.Square + self.Square//2),self.Square//4)
+                pygame.draw.circle(self.Win, Green, (col*self.Square + self.Square//2, row*self.Square + self.Square//2),self.Square//6)
