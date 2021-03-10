@@ -15,6 +15,7 @@ class Game:
         self.Board.draw_Board()
         #Board.draw_test()
         self.Board.draw_pieces()
+        self.draw_available_moves()
         pygame.display.update()
 
     def reset(self):
@@ -26,10 +27,6 @@ class Game:
         else:
             self.turn = White
 
-    def draw_available_moves(self,Win):
-        if len(available_moves) > 0:
-            for pos in available_moves:
-                pygame.draw.circle(Win, Green, (pos[0]*self.Square + self.Square//2, pos[1]*self.Square + self.Square//2),self.Square//4)
 
 
     def select(self,row,col):
@@ -54,3 +51,8 @@ class Game:
             return True
 
         return False
+
+    def draw_available_moves(self):
+        if len(available_moves) > 0:
+            for pos in available_moves:
+                pygame.draw.circle(self.Win, Green, (pos[0]*self.Square + self.Square//2, pos[1]*self.Square + self.Square//2),self.Square//4)
