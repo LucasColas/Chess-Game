@@ -56,4 +56,5 @@ class Game:
     def draw_available_moves(self):
         if len(self.valid_moves) > 0:
             for pos in self.valid_moves:
+                print(pos[0]*self.Square)
                 pygame.draw.circle(self.Win, Green, (pos[0]*self.Square, pos[1]*self.Square),self.Square//4)
