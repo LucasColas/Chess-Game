@@ -42,27 +42,27 @@ class Pawn(Piece):
 
 
     def available_moves(self,row,col,Board):
-
+        available_moves = []
 
         if Board[row-1][col] == 0:
-            self.available_moves.append((row-1,col))
+            available_moves.append((row-1,col))
 
         if self.first_move:
             if Board[row-2][col] == 0:
-                self.available_moves.append((row-2,col))
+                available_moves.append((row-2,col))
             self.first_move = False
 
         if Board[row-1][col-1] != 0:
             piece = Board[row-1][col-1]
             if piece.color != self.color:
-                self.available_moves.append((row-1,col-1))
+                available_moves.append((row-1,col-1))
 
         if Board[row-1][col+1] != 0:
             piece = Board[row-1][col+1]
             if piece.color != self.color:
-                self.available_moves.append((row-1,col+1))
+                available_moves.append((row-1,col+1))
 
-        return self.available_moves
+        return available_moves
 
 
 
