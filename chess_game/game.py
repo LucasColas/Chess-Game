@@ -57,6 +57,7 @@ class Game:
             self.Board.move(self.selected,row,col)
             self.change_turn()
             self.valid_moves = []
+            self.selected = None
 
             return True
 
