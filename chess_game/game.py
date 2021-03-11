@@ -52,7 +52,8 @@ class Game:
         if self.selected and piece == 0 and (row,col) in self.valid_moves:
             self.Board.move(self.selected,row,col)
             self.change_turn()
-            
+            self.valid_moves = []
+            self.selected = None
             return True
 
         return False
