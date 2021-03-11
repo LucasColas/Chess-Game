@@ -29,7 +29,7 @@ class Piece:
     def draw_piece(self,Win):
         Win.blit(self.image, (self.x, self.y))
 
-    
+
 
 class Pawn(Piece):
     def __init__(self,Square, image,color,row,col):
@@ -39,7 +39,7 @@ class Pawn(Piece):
 
     def get_available_moves(self,row,col,Board):
 
-
+        #Works only for white pawns
         if Board[row-1][col] == 0:
             self.available_moves.append((row-1,col))
 
