@@ -36,7 +36,7 @@ def main():
 
             if event.type == pygame.KEYDOWN and game_over:
                 if event.key == pygame.K_SPACE and game_over:
-                    pass
+                    game.reset()
 
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
 
