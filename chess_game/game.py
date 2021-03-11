@@ -35,14 +35,18 @@ class Game:
     def select(self,row,col):
 
         if self.selected:
+            print("selected")
             move = self._move(row,col)
+
             if not move:
+                print("in not move")
                 self.selected = None
                 self.select(row,col)
 
         piece = self.Board.get_piece(row,col)
-        print(piece)
+        #print(piece)
         if piece != 0 and self.turn == piece.color:
+            print("piece !=0 and self turn == piece color")
             self.selected = piece
             self.valid_moves = piece.get_available_moves(row,col,self.Board.Board)
 
@@ -53,7 +57,7 @@ class Game:
             self.Board.move(self.selected,row,col)
             self.change_turn()
             self.valid_moves = []
-            self.selected = None
+
             return True
 
         return False
