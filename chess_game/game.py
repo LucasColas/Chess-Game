@@ -20,7 +20,9 @@ class Game:
         pygame.display.update()
 
     def reset(self):
-        pass
+        self.Board = newBoard(Width, Height, Rows, Cols,Square, Win)
+        self.Square = Square
+        self.selected = None
 
     def change_turn(self):
         if self.turn == White:
@@ -42,7 +44,7 @@ class Game:
         if piece != 0 and self.turn == piece.color:
             self.selected = piece
             self.valid_moves = piece.get_available_moves(row,col,self.Board.Board)
-            
+
 
     def _move(self,row,col):
         piece = self.Board.get_piece(row,col)
