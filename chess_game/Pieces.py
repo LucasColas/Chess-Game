@@ -59,6 +59,9 @@ class Pawn(Piece):
                 if piece.color != self.color:
                     self.available_moves.append((row-1,col+1))
 
+        if self.color == Black:
+            pass
+
         return self.available_moves
 
 
