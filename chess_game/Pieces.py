@@ -40,23 +40,24 @@ class Pawn(Piece):
     def get_available_moves(self,row,col,Board):
 
         #Works only for white pawns
-        if Board[row-1][col] == 0:
-            self.available_moves.append((row-1,col))
+        if self.color == White:
+            if Board[row-1][col] == 0:
+                self.available_moves.append((row-1,col))
 
-        if self.first_move:
-            if Board[row-2][col] == 0:
-                self.available_moves.append((row-2,col))
-            self.first_move = False
+            if self.first_move:
+                if Board[row-2][col] == 0:
+                    self.available_moves.append((row-2,col))
+                self.first_move = False
 
-        if Board[row-1][col-1] != 0:
-            piece = Board[row-1][col-1]
-            if piece.color != self.color:
-                self.available_moves.append((row-1,col-1))
+            if Board[row-1][col-1] != 0:
+                piece = Board[row-1][col-1]
+                if piece.color != self.color:
+                    self.available_moves.append((row-1,col-1))
 
-        if Board[row-1][col+1] != 0:
-            piece = Board[row-1][col+1]
-            if piece.color != self.color:
-                self.available_moves.append((row-1,col+1))
+            if Board[row-1][col+1] != 0:
+                piece = Board[row-1][col+1]
+                if piece.color != self.color:
+                    self.available_moves.append((row-1,col+1))
 
         return self.available_moves
 
