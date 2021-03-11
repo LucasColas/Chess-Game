@@ -41,6 +41,7 @@ class Game:
                 self.select(row,col)
 
         piece = self.Board.get_piece(row,col)
+        print(piece)
         if piece != 0 and self.turn == piece.color:
             self.selected = piece
             self.valid_moves = piece.get_available_moves(row,col,self.Board.Board)
@@ -51,7 +52,7 @@ class Game:
         if self.selected and piece == 0 and (row,col) in self.valid_moves:
             self.Board.move(self.selected,row,col)
             self.change_turn()
-            self.valid_moves = []
+            
             return True
 
         return False
