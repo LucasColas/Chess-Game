@@ -44,19 +44,16 @@ class Game:
                 self.select(row,col)
 
         piece = self.Board.get_piece(row,col)
-        #print(piece)
+
         if piece != 0 and self.turn == piece.color:
-            print("piece !=0 and self turn == piece color")
+
             self.selected = piece
             self.valid_moves = piece.get_available_moves(row,col,self.Board.Board)
-            print("row, col of piece : ", row,col)
-            print("just got valid_moves : ", self.valid_moves)
+
 
     def _move(self,row,col):
         piece = self.Board.get_piece(row,col)
-        print("piece selected",self.selected)
-        print("piece",piece)
-        print("valid_moves", self.valid_moves)
+
         if self.selected and piece == 0 and (row,col) in self.valid_moves:
             self.Board.move(self.selected,row,col)
             self.change_turn()
@@ -71,4 +68,4 @@ class Game:
         if len(self.valid_moves) > 0:
             for pos in self.valid_moves:
                 row,col = pos[0],pos[1]
-                pygame.draw.circle(self.Win, Green, (col*self.Square + self.Square//2, row*self.Square + self.Square//2),self.Square//6)
+                pygame.draw.circle(self.Win, Green, (col*self.Square + self.Square//2, row*self.Square + self.Square//2),self.Square//8)
