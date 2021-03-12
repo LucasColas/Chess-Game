@@ -66,9 +66,10 @@ class newBoard:
     def move(self,piece,row,col):
         self.Board[piece.row][piece.col], self.Board[row][col] = self.Board[row][col], self.Board[piece.row][piece.col]
         piece.piece_move(row,col)
+        
         if piece.type == "Pawn":
             if piece.first_move:
-                first_move = False
+                piece.first_move = False
 
 
     def draw_Board(self):
@@ -77,6 +78,7 @@ class newBoard:
         for row in range(Rows):
             for col in range(row%2, Cols,2):
                 pygame.draw.rect(self.Win,White,(Square*(row), Square*(col),Square,Square))
+
 
     def draw_test(self):
         self.Win.blit(White_Knight, (self.Width//2, self.Width//2))
