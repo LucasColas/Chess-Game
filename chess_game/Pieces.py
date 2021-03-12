@@ -69,12 +69,12 @@ class Pawn(Piece):
                 self.first_move = False
 
             if Board[row+1][col-1] != 0:
-                piece = Board[row-1][col-1]
+                piece = Board[row+1][col-1]
                 if piece.color != self.color:
                     self.available_moves.append((row-1,col-1))
 
             if Board[row+1][col+1] != 0:
-                piece = Board[row-1][col+1]
+                piece = Board[row+1][col+1]
                 if piece.color != self.color:
                     self.available_moves.append((row-1,col+1))
 
