@@ -35,11 +35,11 @@ class Game:
     def select(self,row,col):
 
         if self.selected:
-            print("selected")
+            #print("selected")
             move = self._move(row,col)
 
             if not move:
-                print("in not move")
+                #print("in not move")
                 self.selected = None
                 self.select(row,col)
 
