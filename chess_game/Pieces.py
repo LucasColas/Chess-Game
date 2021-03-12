@@ -36,8 +36,13 @@ class Pawn(Piece):
         super().__init__(Square, image,color,row,col)
         self.first_move = True
 
+    def clear_available_moves(self):
+        if len(self.available_moves) > 0:
+            self.available_moves = []
 
     def get_available_moves(self,row,col,Board):
+
+        self.clear_available_moves()
 
         #Works only for white pawns
         if self.color == White:
@@ -59,6 +64,7 @@ class Pawn(Piece):
                 if piece.color != self.color:
                     self.available_moves.append((row-1,col+1))
 
+        #Works only for black pawns
         if self.color == Black:
             if Board[row+1][col] == 0:
                 self.available_moves.append((row+1,col))
