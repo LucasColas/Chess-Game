@@ -84,6 +84,7 @@ class Pawn(Piece):
                 if piece.color != self.color:
                     self.available_moves.append((row+1,col+1))
 
+        print("self available_moves", self.available_moves)
         return self.available_moves
 
 
