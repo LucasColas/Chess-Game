@@ -53,7 +53,7 @@ class Pawn(Piece):
             if self.first_move:
                 if Board[row-2][col] == 0:
                     self.available_moves.append((row-2,col))
-                #To do : False first_move only when the first move is played
+                
 
             if Board[row-1][col-1] != 0:
                 piece = Board[row-1][col-1]
@@ -85,7 +85,7 @@ class Pawn(Piece):
                 if piece.color != self.color:
                     self.available_moves.append((row+1,col+1))
 
-        
+
         return self.available_moves
 
 
