@@ -3,12 +3,13 @@ from .constants import *
 
 
 class Piece:
-    def __init__(self, Square,image,color,row,col):
+    def __init__(self, Square,image,color,type,row,col):
         self.Square = Square
         self.image = image
         self.color = color
         self.row = row
         self.col = col
+        self.type = type
         self.x = 0
         self.y = 0
         self.image = image
@@ -32,8 +33,8 @@ class Piece:
 
 
 class Pawn(Piece):
-    def __init__(self,Square, image,color,row,col):
-        super().__init__(Square, image,color,row,col)
+    def __init__(self,Square, image,color,type,row,col):
+        super().__init__(Square, image,color,type,row,col)
         self.first_move = True
 
     def clear_available_moves(self):
@@ -52,7 +53,7 @@ class Pawn(Piece):
             if self.first_move:
                 if Board[row-2][col] == 0:
                     self.available_moves.append((row-2,col))
-                self.first_move = False
+                #To do : False first_move only when the first move is played
 
             if Board[row-1][col-1] != 0:
                 piece = Board[row-1][col-1]
@@ -84,34 +85,34 @@ class Pawn(Piece):
                 if piece.color != self.color:
                     self.available_moves.append((row+1,col+1))
 
-        print("self available_moves", self.available_moves)
+        
         return self.available_moves
 
 
 
 
 class Rook(Piece):
-    def __init__(self, Square, image,color,row,col):
-        super().__init__(Square, image,color,row,col)
+    def __init__(self, Square, image,color,type,row,col):
+        super().__init__(Square, image,color,type,row,col)
 
 
 
 
 class Bishop(Piece):
-    def __init__(self, Square, image,color,row,col):
-        super().__init__(Square, image,color,row,col)
+    def __init__(self, Square, image,color,type,row,col):
+        super().__init__(Square, image,color,type,row,col)
 
 
 class Knight(Piece):
-    def __init__(self, Square, image,color,row,col):
-        super().__init__(Square, image,color,row,col)
+    def __init__(self, Square, image,color,type,row,col):
+        super().__init__(Square, image,color,type,row,col)
 
 
 class Queen(Piece):
-    def __init__(self, Square, image,color,row,col):
-        super().__init__(Square, image,color,row,col)
+    def __init__(self, Square, image,color,type,row,col):
+        super().__init__(Square, image,color,type,row,col)
 
 
 class King(Piece):
-    def __init__(self,Square, image,color,row,col):
-        super().__init__(Square, image,color,row,col)
+    def __init__(self,Square, image,color,type,row,col):
+        super().__init__(Square, image,color,type,row,col)
