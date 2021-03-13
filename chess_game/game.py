@@ -52,11 +52,13 @@ class Game:
     def _move(self,row,col):
         piece = self.Board.get_piece(row,col)
 
-        if self.selected and piece == 0 and (row,col) in self.valid_moves:
-            self.Board.move(self.selected,row,col)
-            self.change_turn()
-            self.valid_moves = []
-            self.selected = None
+        if self.selected and (row,col) in self.valid_moves:
+            if piece == 0 or piece.color != self.color:
+
+                self.Board.move(self.selected,row,col)
+                self.change_turn()
+                self.valid_moves = []
+                self.selected = None
 
             return True
 
