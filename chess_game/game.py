@@ -53,7 +53,7 @@ class Game:
         piece = self.Board.get_piece(row,col)
 
         if self.selected and (row,col) in self.valid_moves:
-            if piece == 0 or piece.color != self.color:
+            if piece == 0 or piece.color != self.selected.color:
                 self.Board.move(self.selected,row,col)
                 self.change_turn()
                 self.valid_moves = []
