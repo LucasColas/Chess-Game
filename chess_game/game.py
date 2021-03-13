@@ -48,6 +48,9 @@ class Game:
             self.selected = piece
             self.valid_moves = piece.get_available_moves(row,col,self.Board.Board)
 
+    def remove(piece,row,col):
+        
+
 
     def _move(self,row,col):
         piece = self.Board.get_piece(row,col)
