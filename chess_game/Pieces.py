@@ -53,7 +53,7 @@ class Pawn(Piece):
             if self.first_move:
                 if Board[row-2][col] == 0:
                     self.available_moves.append((row-2,col))
-                
+
 
             if Board[row-1][col-1] != 0:
                 piece = Board[row-1][col-1]
@@ -95,6 +95,8 @@ class Rook(Piece):
     def __init__(self, Square, image,color,type,row,col):
         super().__init__(Square, image,color,type,row,col)
 
+    def get_available_moves(self,row,col,Board):
+        pass
 
 
 
