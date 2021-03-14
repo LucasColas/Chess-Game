@@ -68,6 +68,7 @@ class Pawn(Piece):
 
         #Works only for black pawns
         if self.color == Black:
+            
             if Board[row+1][col] == 0:
                 self.available_moves.append((row+1,col))
 
