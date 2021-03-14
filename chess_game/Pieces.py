@@ -96,7 +96,15 @@ class Rook(Piece):
         super().__init__(Square, image,color,type,row,col)
 
     def get_available_moves(self,row,col,Board):
-        pass
+
+        for i in range(row, 8):
+            if Board[i][col] == 0:
+                self.available_moves.append((i,col))
+            else:
+                if Board[i][col].color != self.color:
+                    self.available_moves.append((i,col))
+                    
+                    return self.available_moves
 
 
 
