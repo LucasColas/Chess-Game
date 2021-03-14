@@ -119,7 +119,17 @@ class Rook(Piece):
                 else:
                     break
 
-        
+        for i in range(col, 8):
+            if Board[i][col] == 0:
+                self.available_moves.append((i,col))
+
+            else:
+                if Board[i][col].color != self.color:
+                    self.available_moves.append((i,col))
+                    break
+
+                else:
+                    break
 
 
 
