@@ -45,7 +45,7 @@ class Pawn(Piece):
 
         self.clear_available_moves()
 
-        #Works only for white pawns
+        #Works for white pawns
         #To do : add limit to avoid index out of range
         if self.color == White:
             if Board[row-1][col] == 0:
@@ -66,9 +66,9 @@ class Pawn(Piece):
                 if piece.color != self.color:
                     self.available_moves.append((row-1,col+1))
 
-        #Works only for black pawns
+        #Works for black pawns
         if self.color == Black:
-            
+
             if Board[row+1][col] == 0:
                 self.available_moves.append((row+1,col))
 
