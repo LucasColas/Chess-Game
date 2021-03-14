@@ -46,6 +46,7 @@ class Pawn(Piece):
         self.clear_available_moves()
 
         #Works only for white pawns
+        #To do : add limit to avoid index out of range
         if self.color == White:
             if Board[row-1][col] == 0:
                 self.available_moves.append((row-1,col))
@@ -73,7 +74,7 @@ class Pawn(Piece):
             if self.first_move:
                 if Board[row+1][col] == 0 and Board[row+2][col] == 0:
                     self.available_moves.append((row+2,col))
-                self.first_move = False
+
 
             if Board[row+1][col-1] != 0:
                 piece = Board[row+1][col-1]
@@ -144,8 +145,7 @@ class Rook(Piece):
                     break
 
 
-
-
+        return self.available_moves
 
 
 class Bishop(Piece):
