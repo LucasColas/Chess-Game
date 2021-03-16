@@ -103,23 +103,21 @@ class Rook(Piece):
 
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
-        print('r,c : ',row,col)
-        print("self available_moves, ",self.available_moves)
         for i in range(row+1, 8):
-            print("i, row : ", i,row)
+
             if Board[i][col] == 0:
-                print("available move")
+
                 self.available_moves.append((i,col))
             else:
                 if Board[i][col].color != self.color:
-                    print("available move")
+
                     self.available_moves.append((i,col))
                     break
                 else:
                     break
 
         for j in range(row-1,-1,-1):
-            print('j,col : ', j,col)
+
             if Board[j][col] == 0:
 
                 self.available_moves.append((j,col))
@@ -135,7 +133,7 @@ class Rook(Piece):
                     break
 
         for i in range(col+1, 8):
-            print("row, col + : ", row,i)
+
             if Board[row][i] == 0:
                 self.available_moves.append((row,i))
 
@@ -148,14 +146,12 @@ class Rook(Piece):
                     break
 
         for i in range(col-1, -1,-1):
-            print("row, col - : ", row,i)
+
             if Board[row][i] == 0:
                 self.available_moves.append((row,i))
 
             else:
                 if Board[row][i].color != self.color:
-                    print("in != color")
-                    print("place color", Board[row][i].color)
                     self.available_moves.append((row,i))
                     break
 
