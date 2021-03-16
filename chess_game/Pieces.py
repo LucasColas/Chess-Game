@@ -167,18 +167,27 @@ class Bishop(Piece):
         super().__init__(Square, image,color,type,row,col)
 
     def get_available_moves(self,row,col,Board):
-        pass
+        self.clear_available_moves()
+
+        
 
 class Knight(Piece):
     def __init__(self, Square, image,color,type,row,col):
         super().__init__(Square, image,color,type,row,col)
 
+    def get_available_moves(self,row,col,Board):
+        self.clear_available_moves()
 
 class Queen(Piece):
     def __init__(self, Square, image,color,type,row,col):
         super().__init__(Square, image,color,type,row,col)
 
+    def get_available_moves(self,row,col,Board):
+        self.clear_available_moves()
 
 class King(Piece):
     def __init__(self,Square, image,color,type,row,col):
         super().__init__(Square, image,color,type,row,col)
+
+    def get_available_moves(self,row,col,Board):
+        self.clear_available_moves()
