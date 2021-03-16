@@ -103,7 +103,9 @@ class Rook(Piece):
 
     def get_available_moves(self,row,col,Board):
         print("rook available_moves")
-        for i in range(row, 8):
+        print('r,c : ', row,col)
+        for i in range(row+1, 8):
+            print(i)
             if Board[i][col] == 0:
                 print("available move")
                 self.available_moves.append((i,col))
