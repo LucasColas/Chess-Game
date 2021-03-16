@@ -10,6 +10,8 @@ class Game:
         self.selected = None
         self.turn = White
         self.valid_moves = []
+        self.Black_pieces_left = 16
+        self.White_pieces_left = 16
 
     def update_window(self):
 
@@ -52,6 +54,10 @@ class Game:
     def remove(self,piece,row,col):
         if piece != 0:
             self.Board.Board[row][col] = 0
+        if piece.color == White:
+            self.White_pieces_left -= 1
+        else:
+            self.Black_pieces_left -= 1
 
 
     def _move(self,row,col):
