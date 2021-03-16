@@ -102,8 +102,7 @@ class Rook(Piece):
         super().__init__(Square, image,color,type,row,col)
 
     def get_available_moves(self,row,col,Board):
-        print("rook available_moves")
-        print('r,c : ', row,col)
+        print('r,c : ',col)
         for i in range(row+1, 8):
             print(i)
             if Board[i][col] == 0:
@@ -118,7 +117,7 @@ class Rook(Piece):
                     break
 
         for j in range(row-1,-1,-1):
-
+            print('j,col : ', j,col)
             if Board[j][col] == 0:
 
                 self.available_moves.append((j,col))
@@ -133,7 +132,7 @@ class Rook(Piece):
 
                     break
 
-        for i in range(col, 8):
+        for i in range(col+1, 8):
             if Board[row][i] == 0:
                 self.available_moves.append((row,i))
 
@@ -145,7 +144,7 @@ class Rook(Piece):
                 else:
                     break
 
-        for i in range(col, -1,-1):
+        for i in range(col-1, -1,-1):
             if Board[row][i] == 0:
                 self.available_moves.append((row,i))
 
