@@ -169,7 +169,19 @@ class Bishop(Piece):
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
 
-        
+        for index in range(len(Board)):
+            if Board[index][index] == 0:
+                self.available_moves.append((index,index))
+
+            else:
+                if Board[index][index].color != self.color:
+                    self.available_moves.append((index,index))
+                    break
+                else:
+                    break
+
+        return self.available_moves
+
 
 class Knight(Piece):
     def __init__(self, Square, image,color,type,row,col):
