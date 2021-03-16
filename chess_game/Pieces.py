@@ -26,6 +26,9 @@ class Piece:
         self.x = self.col*self.Square
         self.y = self.row*self.Square
 
+    def clear_available_moves(self):
+        if len(self.available_moves) > 0:
+            self.available_moves = []
 
     def draw_piece(self,Win):
         Win.blit(self.image, (self.x, self.y))
@@ -37,9 +40,6 @@ class Pawn(Piece):
         super().__init__(Square, image,color,type,row,col)
         self.first_move = True
 
-    def clear_available_moves(self):
-        if len(self.available_moves) > 0:
-            self.available_moves = []
 
     def get_available_moves(self,row,col,Board):
 
@@ -102,7 +102,9 @@ class Rook(Piece):
         super().__init__(Square, image,color,type,row,col)
 
     def get_available_moves(self,row,col,Board):
+        self.clear_available_moves()
         print('r,c : ',row,col)
+        print("self available_moves, ",self.available_moves)
         for i in range(row+1, 8):
             print("i, row : ", i,row)
             if Board[i][col] == 0:
@@ -160,7 +162,7 @@ class Rook(Piece):
                 else:
                     break
 
-        print("available_moves : ", self.available_moves)
+
         return self.available_moves
 
 
