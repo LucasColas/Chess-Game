@@ -117,7 +117,7 @@ class Rook(Piece):
                     break
 
         for j in range(row-1,-1,-1):
-            print('j,col : ', j,col)
+            #print('j,col : ', j,col)
             if Board[j][col] == 0:
 
                 self.available_moves.append((j,col))
@@ -145,11 +145,14 @@ class Rook(Piece):
                     break
 
         for i in range(col-1, -1,-1):
+            print(Board[row][i])
             if Board[row][i] == 0:
                 self.available_moves.append((row,i))
 
             else:
                 if Board[row][i].color != self.color:
+                    print("in != color")
+                    print("place color", Board[row][i].color)
                     self.available_moves.append((row,i))
                     break
 

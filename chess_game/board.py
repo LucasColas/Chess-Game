@@ -33,10 +33,10 @@ class newBoard:
                         self.Board[row][col] = Rook(self.Square, Black_Rook,Black,"Rook",row,col)
 
                     if col == 1 or col == 6:
-                        self.Board[row][col] = Knight(self.Square, Black_Knight,"Knight",Black,row,col)
+                        self.Board[row][col] = Knight(self.Square, Black_Knight,Black,"Knight",row,col)
 
                     if col == 2 or col == 5:
-                        self.Board[row][col] = Bishop(self.Square, Black_Bishop,"Bishop",Black,row,col)
+                        self.Board[row][col] = Bishop(self.Square, Black_Bishop,Black,"Bishop",row,col)
 
                     if col == 3:
                         self.Board[row][col] = Queen(self.Square, Black_Queen,Black,"Queen",row,col)
@@ -66,7 +66,7 @@ class newBoard:
     def move(self,piece,row,col):
         self.Board[piece.row][piece.col], self.Board[row][col] = self.Board[row][col], self.Board[piece.row][piece.col]
         piece.piece_move(row,col)
-        
+
         if piece.type == "Pawn":
             if piece.first_move:
                 piece.first_move = False
