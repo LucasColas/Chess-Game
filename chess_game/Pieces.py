@@ -184,6 +184,21 @@ class Bishop(Piece):
                             break
 
 
+        for index_row in range(row-1, -1,-1):
+            for index_col in range(col-1,-1,-1):
+                if index_row == index_col:
+                    if Board[index_row][index_col] == 0:
+                        self.available_moves.append((index_row, index_col))
+
+                    else:
+                        if Board[index_row][index].color != self.color:
+                            self.available_moves.append((index_row, index_col))
+                            break
+
+                        else:
+                            break
+
+
 
         return self.available_moves
 
