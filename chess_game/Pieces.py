@@ -217,7 +217,7 @@ class Bishop(Piece):
 
         row_i = row
         col_i = col
-        while row_i >= 0 and col_i < 7:
+        while row_i >= 0 and col_i > 0:
             row_i -= 1
             col_i -= 1
 
