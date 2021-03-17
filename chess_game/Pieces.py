@@ -198,6 +198,24 @@ class Bishop(Piece):
                         else:
                             break
 
+        row_i = row
+        col_i = col
+        while row_i >= 0 and col_i < 7:
+            row_i -= 1
+            col_i += 1
+
+            if Board[row_i][col_i] == 0:
+                self.available_moves.append((row_i, col_i))
+
+            else:
+                if Board[row_i][col] != 0:
+                    self.available_moves.append((row_i, col_i))
+                    break
+
+                else:
+                    break
+
+
 
 
         return self.available_moves
