@@ -169,16 +169,16 @@ class Bishop(Piece):
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
 
-        for index in range(row,len(Board)):
-            for index2 in range(col,len(Board[0])):
-                if index == index2:
-                    
-                    if Board[index][index2] == 0:
-                        self.available_moves.append((index,index))
+        for index_row in range(row,len(Board)):
+            for index_col in range(col,len(Board[0])):
+                if index_row == index_col:
+
+                    if Board[index_row][index_col] == 0:
+                        self.available_moves.append((index_row,index_col))
 
                     else:
-                        if Board[index][index].color != self.color:
-                            self.available_moves.append((index,index))
+                        if Board[index_row][index_col].color != self.color:
+                            self.available_moves.append((index_row,index_col))
                             break
                         else:
                             break
