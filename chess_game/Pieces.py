@@ -170,7 +170,7 @@ class Bishop(Piece):
 
         for index_row in range(row,len(Board)):
             for index_col in range(col,len(Board[0])):
-
+                print(index_row,index_col)
                 if index_row == index_col:
 
                     if Board[index_row][index_col] == 0:
