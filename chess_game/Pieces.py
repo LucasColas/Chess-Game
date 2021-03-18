@@ -184,7 +184,7 @@ class Bishop(Piece):
                         else:
                             break
 
-        row_i = row+1
+        row_i = row-1
         col_i = col-1
         while row_i >=0 and col_i >= 0:
 
@@ -200,7 +200,7 @@ class Bishop(Piece):
                 break
 
 
-        """
+
         row_i = row
         col_i = col
         while row_i >= 0 and col_i < 7:
@@ -234,7 +234,7 @@ class Bishop(Piece):
 
                 else:
                     break
-        """
+        
         return self.available_moves
 
 
