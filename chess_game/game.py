@@ -48,7 +48,7 @@ class Game:
         piece = self.Board.get_piece(row,col)
         if piece != 0 and self.turn == piece.color:
             self.selected = piece
-            print(piece)
+            #print(piece)
             self.valid_moves = piece.get_available_moves(row,col,self.Board.Board)
 
     def remove(self,piece,row,col):

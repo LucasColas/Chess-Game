@@ -171,6 +171,7 @@ class Bishop(Piece):
 
         for index_row in range(row,len(Board)):
             for index_col in range(col,len(Board[0])):
+
                 if index_row == index_col:
 
                     if Board[index_row][index_col] == 0:
@@ -183,21 +184,23 @@ class Bishop(Piece):
                         else:
                             break
 
+        row_i = row+1
+        col_i = col-1
+        while row_i >=0 and col_i >= 0:
 
-        for index_row in range(row-1, -1,-1):
-            for index_col in range(col-1,-1,-1):
-                if index_row == index_col:
-                    if Board[index_row][index_col] == 0:
-                        self.available_moves.append((index_row, index_col))
+            if Board[row_i][col_i] == 0:
+                self.available_moves.append((row_i,col_i))
+                row -= 1
+                col -= 1
 
-                    else:
-                        if Board[index_row][index].color != self.color:
-                            self.available_moves.append((index_row, index_col))
-                            break
+            else:
+                if Board[row_i][col_i].color != self.color:
+                    self.available_moves.append((row_i,row_col))
+                    break
+                break
 
-                        else:
-                            break
 
+        """
         row_i = row
         col_i = col
         while row_i >= 0 and col_i < 7:
@@ -218,7 +221,7 @@ class Bishop(Piece):
         row_i = row
         col_i = col
         while row_i >= 0 and col_i > 0:
-            row_i -= 1
+            row_i += 1
             col_i -= 1
 
             if Board[row_i][col_i] == 0:
@@ -231,7 +234,7 @@ class Bishop(Piece):
 
                 else:
                     break
-
+        """
         return self.available_moves
 
 
