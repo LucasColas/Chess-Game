@@ -182,8 +182,7 @@ class Bishop(Piece):
                     print("first loop : ",row_i,col_i)
                     self.available_moves.append((row_i,col_i))
                     break
-                else:
-                    break
+                break
         """
         for index_row in range(row,len(Board)):
             for index_col in range(col,len(Board[0])):
@@ -237,8 +236,7 @@ class Bishop(Piece):
                     self.available_moves.append((row_i, col_i))
                     break
 
-                else:
-                    break
+                break
 
         row_i = row
         col_i = col
@@ -256,8 +254,7 @@ class Bishop(Piece):
                     self.available_moves.append((row_i, col_i))
                     break
 
-                else:
-                    break
+                break
 
         return self.available_moves
 
