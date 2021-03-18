@@ -133,7 +133,6 @@ class Rook(Piece):
                     break
 
         for i in range(col+1, 8):
-
             if Board[row][i] == 0:
                 self.available_moves.append((row,i))
 
@@ -175,10 +174,12 @@ class Bishop(Piece):
                 if index_row == index_col:
 
                     if Board[index_row][index_col] == 0:
+                        print(index_row, index_col)
                         self.available_moves.append((index_row,index_col))
 
                     else:
                         if Board[index_row][index_col].color != self.color:
+                            print(index_row,index_col)
                             self.available_moves.append((index_row,index_col))
                             break
                         else:
@@ -186,15 +187,17 @@ class Bishop(Piece):
 
         row_i = row-1
         col_i = col-1
-        while row_i >=0 and col_i >= 0:
+        while row_i >= 0 and col_i >= 0:
 
             if Board[row_i][col_i] == 0:
                 self.available_moves.append((row_i,col_i))
-                row -= 1
-                col -= 1
+                print(row_i, col_i)
+                row_i -= 1
+                col_i -= 1
 
             else:
                 if Board[row_i][col_i].color != self.color:
+                    print(row_i, col_i)
                     self.available_moves.append((row_i,row_col))
                     break
                 break
@@ -208,6 +211,7 @@ class Bishop(Piece):
             col_i += 1
 
             if Board[row_i][col_i] == 0:
+                print(row_i, col_i)
                 self.available_moves.append((row_i, col_i))
 
             else:
@@ -225,16 +229,18 @@ class Bishop(Piece):
             col_i -= 1
 
             if Board[row_i][col_i] == 0:
+                print(row_i, col_i)
                 self.available_moves.append((row_i, col_i))
 
             else:
                 if Board[row_i][col] != 0:
+                    print(row_i, col_i)
                     self.available_moves.append((row_i, col_i))
                     break
 
                 else:
                     break
-        
+
         return self.available_moves
 
 
