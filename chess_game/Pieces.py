@@ -174,6 +174,8 @@ class Bishop(Piece):
             if Board[row_i][col_i] == 0:
                 print("first loop : ",row_i, col_i)
                 self.available_moves.append((row_i,col_i))
+                row_i += 1
+                col_i += 1
 
             else:
                 if Board[row_i][col_i].color != self.color:
