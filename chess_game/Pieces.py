@@ -174,12 +174,12 @@ class Bishop(Piece):
                 if index_row == index_col:
 
                     if Board[index_row][index_col] == 0:
-                        print(index_row, index_col)
+                        print("first loop : ",index_row, index_col)
                         self.available_moves.append((index_row,index_col))
 
                     else:
                         if Board[index_row][index_col].color != self.color:
-                            print(index_row,index_col)
+                            print("first loop : ",index_row,index_col)
                             self.available_moves.append((index_row,index_col))
                             break
                         else:
@@ -191,13 +191,13 @@ class Bishop(Piece):
 
             if Board[row_i][col_i] == 0:
                 self.available_moves.append((row_i,col_i))
-                print(row_i, col_i)
+                print("second loop ",row_i, col_i)
                 row_i -= 1
                 col_i -= 1
 
             else:
                 if Board[row_i][col_i].color != self.color:
-                    print(row_i, col_i)
+                    print("second loop",row_i, col_i)
                     self.available_moves.append((row_i,row_col))
                     break
                 break
@@ -211,7 +211,7 @@ class Bishop(Piece):
             col_i += 1
 
             if Board[row_i][col_i] == 0:
-                print(row_i, col_i)
+                print("third loop",row_i, col_i)
                 self.available_moves.append((row_i, col_i))
 
             else:
@@ -224,12 +224,12 @@ class Bishop(Piece):
 
         row_i = row
         col_i = col
-        while row_i >= 0 and col_i > 0:
+        while row_i < 7 and col_i > 0:
             row_i += 1
             col_i -= 1
 
             if Board[row_i][col_i] == 0:
-                print(row_i, col_i)
+                print("fourth loop",row_i, col_i)
                 self.available_moves.append((row_i, col_i))
 
             else:
