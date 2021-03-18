@@ -168,6 +168,21 @@ class Bishop(Piece):
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
 
+        row_i = row+1
+        col_i = col+1
+        while row_i < 7 and col_i < 7:
+            if Board[row_i][col_i] == 0:
+                print("first loop : ",row_i, col_i)
+                self.available_moves.append((row_i,col_i))
+
+            else:
+                if Board[row_i][col_i].color != self.color:
+                    print("first loop : ",row_i,col_i)
+                    self.available_moves.append((row_i,col_i))
+                    break
+                else:
+                    break
+        """
         for index_row in range(row,len(Board)):
             for index_col in range(col,len(Board[0])):
                 if index_row == index_col:
@@ -183,6 +198,7 @@ class Bishop(Piece):
                             break
                         else:
                             break
+        """
 
         row_i = row-1
         col_i = col-1
@@ -197,7 +213,7 @@ class Bishop(Piece):
             else:
                 if Board[row_i][col_i].color != self.color:
                     print("second loop",row_i, col_i)
-                    self.available_moves.append((row_i,row_col))
+                    self.available_moves.append((row_i,col_i))
                     break
                 break
 
