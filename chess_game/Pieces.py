@@ -226,7 +226,7 @@ class Bishop(Piece):
         while row_i < 7 and col_i > 0:
             row_i += 1
             col_i -= 1
-
+            
             if Board[row_i][col_i] == 0:
                 print("fourth loop",row_i, col_i)
                 self.available_moves.append((row_i, col_i))
