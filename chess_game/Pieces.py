@@ -170,7 +170,7 @@ class Bishop(Piece):
 
         row_i = row+1
         col_i = col+1
-        while row_i < 7 and col_i < 7:
+        while row_i <= 7 and col_i <= 7:
             if Board[row_i][col_i] == 0:
                 print("first loop : ",row_i, col_i)
                 self.available_moves.append((row_i,col_i))
@@ -183,23 +183,6 @@ class Bishop(Piece):
                     self.available_moves.append((row_i,col_i))
                     break
                 break
-        """
-        for index_row in range(row,len(Board)):
-            for index_col in range(col,len(Board[0])):
-                if index_row == index_col:
-
-                    if Board[index_row][index_col] == 0:
-                        print("first loop : ",index_row, index_col)
-                        self.available_moves.append((index_row,index_col))
-
-                    else:
-                        if Board[index_row][index_col].color != self.color:
-                            print("first loop : ",index_row,index_col)
-                            self.available_moves.append((index_row,index_col))
-                            break
-                        else:
-                            break
-        """
 
         row_i = row-1
         col_i = col-1
