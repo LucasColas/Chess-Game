@@ -249,7 +249,15 @@ class Knight(Piece):
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
 
-        
+        if row-2 >= 0 and col+1 <= len(Board):
+            if Board[row-2][col+1] == 0:
+                self.available_moves.append((row-2,col+1))
+            else:
+                if Board[row-2][col+1].color != self.color:
+                    self.available_moves.append((row-2,col+1))
+                    break
+
+                break 
 
 class Queen(Piece):
     def __init__(self, Square, image,color,type,row,col):
