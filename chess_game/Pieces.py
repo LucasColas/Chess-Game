@@ -214,7 +214,7 @@ class Bishop(Piece):
                 self.available_moves.append((row_i, col_i))
 
             else:
-                if Board[row_i][col] != 0:
+                if Board[row_i][col].color != self.color:
                     print("third loop",row_i, col_i)
                     self.available_moves.append((row_i, col_i))
                     break
@@ -226,13 +226,13 @@ class Bishop(Piece):
         while row_i < 7 and col_i > 0:
             row_i += 1
             col_i -= 1
-            
+            print(Board[row_i][col_i])
             if Board[row_i][col_i] == 0:
                 print("fourth loop",row_i, col_i)
                 self.available_moves.append((row_i, col_i))
 
             else:
-                if Board[row_i][col] != 0:
+                if Board[row_i][col].color != self.color :
                     print("fourth loop",row_i, col_i)
                     self.available_moves.append((row_i, col_i))
                     break
