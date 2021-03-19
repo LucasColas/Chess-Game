@@ -172,14 +172,14 @@ class Bishop(Piece):
         col_i = col+1
         while row_i <= 7 and col_i <= 7:
             if Board[row_i][col_i] == 0:
-                print("first loop : ",row_i, col_i)
+                #print("first loop : ",row_i, col_i)
                 self.available_moves.append((row_i,col_i))
                 row_i += 1
                 col_i += 1
 
             else:
                 if Board[row_i][col_i].color != self.color:
-                    print("first loop : ",row_i,col_i)
+                    #print("first loop : ",row_i,col_i)
                     self.available_moves.append((row_i,col_i))
                     break
                 break
@@ -190,13 +190,13 @@ class Bishop(Piece):
 
             if Board[row_i][col_i] == 0:
                 self.available_moves.append((row_i,col_i))
-                print("second loop ",row_i, col_i)
+                #print("second loop ",row_i, col_i)
                 row_i -= 1
                 col_i -= 1
 
             else:
                 if Board[row_i][col_i].color != self.color:
-                    print("second loop",row_i, col_i)
+                    #print("second loop",row_i, col_i)
                     self.available_moves.append((row_i,col_i))
                     break
                 break
@@ -210,12 +210,12 @@ class Bishop(Piece):
             col_i += 1
 
             if Board[row_i][col_i] == 0:
-                print("third loop",row_i, col_i)
+                #print("third loop",row_i, col_i)
                 self.available_moves.append((row_i, col_i))
 
             else:
                 if Board[row_i][col_i].color != self.color:
-                    print("third loop",row_i, col_i)
+                    #print("third loop",row_i, col_i)
                     self.available_moves.append((row_i, col_i))
                     break
 
@@ -228,12 +228,12 @@ class Bishop(Piece):
             col_i -= 1
             print(Board[row_i][col_i])
             if Board[row_i][col_i] == 0:
-                print("fourth loop",row_i, col_i)
+                #print("fourth loop",row_i, col_i)
                 self.available_moves.append((row_i, col_i))
 
             else:
                 if Board[row_i][col_i].color != self.color :
-                    print("fourth loop",row_i, col_i)
+                    #print("fourth loop",row_i, col_i)
                     self.available_moves.append((row_i, col_i))
                     break
 
@@ -248,6 +248,8 @@ class Knight(Piece):
 
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
+
+        
 
 class Queen(Piece):
     def __init__(self, Square, image,color,type,row,col):
