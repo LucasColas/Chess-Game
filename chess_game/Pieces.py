@@ -418,7 +418,7 @@ class Queen(Piece):
 
                 else:
                     break
-                    
+
         return self.available_moves
 
 
@@ -429,3 +429,11 @@ class King(Piece):
 
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
+
+        if row-1 >= 0:
+            if Board[row-1][col] == 0 or Board[row-1][col].color != self.color:
+                self.valid_moves.append((row-1,col))
+
+        if row-1 >= 0 and col+1 < len(Board):
+            if Board[row-1][col+1] == 0 or Board[row-1][col+1].color != self.color:
+                self.valid_moves.append((row-1,col+1))
