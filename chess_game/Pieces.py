@@ -253,7 +253,6 @@ class Knight(Piece):
             if Board[row-2][col+1] == 0 or Board[row-2][col+1].color != self.color:
                 self.available_moves.append((row-2,col+1))
 
-
         if row-1 >= 0 and col+2 < len(Board):
             if Board[row-1][col+2] == 0 or Board[row-1][col+2].color != self.color:
                 self.available_moves.append((row-1,col+2))
