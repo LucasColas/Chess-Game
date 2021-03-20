@@ -26,6 +26,15 @@ class Game:
         self.Square = Square
         self.selected = None
 
+    def check_game(self):
+        if self.Black_pieces_left == 0:
+            print("Whites win")
+
+        if self.White_pieces_left == 0:
+            print("Blacks win")
+
+        
+
     def change_turn(self):
         if self.turn == White:
             self.turn = Black
