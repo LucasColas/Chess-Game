@@ -34,6 +34,7 @@ class Game:
             print("Blacks win")
 
     def checkmate(self):
+        pass
 
     def change_turn(self):
         if self.turn == White:
