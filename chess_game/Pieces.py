@@ -437,3 +437,27 @@ class King(Piece):
         if row-1 >= 0 and col+1 < len(Board):
             if Board[row-1][col+1] == 0 or Board[row-1][col+1].color != self.color:
                 self.valid_moves.append((row-1,col+1))
+
+        if col+1 < len(Board):
+            if Board[row][col+1] == 0 or Board[row][col+1].color != self.color:
+                self.valid_moves.append((row,col+1))
+
+        if row+1 < len(Board) and col+1 < len(Board):
+            if Board[row+1][col+1] == 0 or Board[row+1][col+1].color != self.color:
+                self.valid_moves.append((row+1,col+1))
+
+        if row+1 < len(Board):
+            if Board[row+1][col] == 0 or Board[row+1][col].color != self.color:
+                self.valid_moves.append((row+1,col))
+
+        if row+1 < len(Board) and col-1 >= 0:
+            if Board[row+1][col-1] == 0 or Board[row+1][col-1].color != self.color:
+                self.valid_moves.append((row+1,col-1))
+
+        if col-1 >= 0:
+            if Board[row][col-1] == 0 or Board[row][col-1].color != self.color:
+                self.valid_moves.append((row,col-1))
+
+        if row-1 >= 0 and col-1 >= 0:
+            if Board[row-1][col-1] == 0 or Board[row-1][col-1].color != self.color:
+                self.valid_moves.append((row-1, col-1))
