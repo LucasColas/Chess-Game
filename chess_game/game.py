@@ -33,7 +33,7 @@ class Game:
         if self.White_pieces_left == 0:
             print("Blacks win")
 
-        
+    def checkmate(self):
 
     def change_turn(self):
         if self.turn == White:
