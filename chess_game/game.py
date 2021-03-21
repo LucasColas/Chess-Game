@@ -55,6 +55,7 @@ class Game:
                     while (row,col) in piece.available_moves:
                         piece.available_moves.remove((row,col))
 
+
     def change_turn(self):
         if self.turn == White:
             self.turn = Black
