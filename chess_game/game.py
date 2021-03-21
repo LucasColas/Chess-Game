@@ -36,11 +36,11 @@ class Game:
 
     def enemies_moves(self,piece):
         enemies_moves = []
-        for r in range(len(self.Board)):
-            for c in range(len(self.Board[r])):
-                if self.Board[r][c] != 0:
-                    if self.Board[r][c].color != piece.color:
-                        moves = self.Board[r][c].get_available_moves(r,c,self.Board)
+        for r in range(len(self.Board.Board)):
+            for c in range(len(self.Board.Board[r])):
+                if self.Board.Board[r][c] != 0:
+                    if self.Board.Board[r][c].color != piece.color:
+                        moves = self.Board.Board[r][c].get_available_moves(r,c,self.Board.Board)
                         for move in moves:
                             enemies_moves.append(move)
 
@@ -50,7 +50,7 @@ class Game:
 
     def checkmate(self, piece,row,col):
         if piece.type == "King":
-            if (row,col) in enemies_moves:
+            if (row,col) in self.enemies_moves(piece):
                 piece.available_moves.remove((row,col))
 
     def change_turn(self):
