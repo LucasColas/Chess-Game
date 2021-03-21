@@ -32,9 +32,11 @@ class Game:
 
         if self.White_pieces_left == 0:
             print("Blacks win")
-
-    def checkmate(self, piece):
-        pass
+    def enemies_moves()
+    def checkmate(self, piece,row,col):
+        if piece.type == "King":
+            if (row,col) in enemies_moves:
+                piece.available_moves.remove((row,col))
 
     def change_turn(self):
         if self.turn == White:
@@ -78,7 +80,7 @@ class Game:
 
         return False
 
-        
+
         def remove(self,piece,row,col):
             if piece != 0:
                 self.Board.Board[row][col] = 0
