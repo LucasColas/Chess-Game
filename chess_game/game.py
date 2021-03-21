@@ -97,15 +97,15 @@ class Game:
         return False
 
 
-        def remove(self,piece,row,col):
-            if piece != 0:
-                self.Board.Board[row][col] = 0
-                if piece.color == White:
-                    self.White_pieces_left -= 1
-                else:
-                    self.Black_pieces_left -= 1
-            print("White_pieces_left : ", self.White_pieces_left)
-            print("Black_pieces_left : ", self.Black_pieces_left)
+    def remove(self,piece,row,col):
+        if piece != 0:
+            self.Board.Board[row][col] = 0
+            if piece.color == White:
+                self.White_pieces_left -= 1
+            else:
+                self.Black_pieces_left -= 1
+        print("White_pieces_left : ", self.White_pieces_left)
+        print("Black_pieces_left : ", self.Black_pieces_left)
 
 
     def draw_available_moves(self):
