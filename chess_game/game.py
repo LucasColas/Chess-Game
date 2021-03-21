@@ -32,7 +32,17 @@ class Game:
 
         if self.White_pieces_left == 0:
             print("Blacks win")
-    def enemies_moves()
+
+
+    def enemies_moves(self,piece):
+        enemies_moves = []
+        for r in range(len(self.Board)):
+            for c in range(len(self.Board[r])):
+                if self.Board[r][c] != 0:
+                    if self.Board[r][c].color != piece.color:
+
+
+
     def checkmate(self, piece,row,col):
         if piece.type == "King":
             if (row,col) in enemies_moves:
