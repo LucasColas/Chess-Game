@@ -40,6 +40,11 @@ class Game:
             for c in range(len(self.Board[r])):
                 if self.Board[r][c] != 0:
                     if self.Board[r][c].color != piece.color:
+                        moves = self.Board[r][c].get_available_moves(r,c,self.Board)
+                        for move in moves:
+                            enemies_moves.append(move)
+
+        return enemies_moves
 
 
 
