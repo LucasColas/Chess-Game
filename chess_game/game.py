@@ -51,7 +51,9 @@ class Game:
     def checkmate(self, piece,row,col):
         if piece.type == "King":
             if (row,col) in self.enemies_moves(piece):
-                piece.available_moves.remove((row,col))
+                if self.ennemies_moves(piece).count((row,col)) > 1:
+                    while (row,col) in piece.available_moves:
+                        piece.available_moves.remove((row,col))
 
     def change_turn(self):
         if self.turn == White:
