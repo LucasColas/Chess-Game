@@ -65,7 +65,7 @@ class Game:
 
         if self.selected:
             #print("selected")
-            self.checkmate()
+            self.checkmate(self.selected,row,col)
             move = self._move(row,col)
 
             if not move:
