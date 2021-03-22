@@ -357,6 +357,7 @@ class Queen(Piece):
                 self.available_moves.append((row_i, col_i))
                 row_i += 1
                 col_i -= 1
+                
             else:
                 if Board[row_i][col_i].color != self.color :
                     #print("fourth loop",row_i, col_i)
