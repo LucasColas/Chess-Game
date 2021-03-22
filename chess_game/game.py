@@ -43,7 +43,7 @@ class Game:
                         moves = self.Board.Board[r][c].get_available_moves(r,c,self.Board.Board)
                         for move in moves:
                             enemies_moves.append(move)
-
+        print(enemies_moves)
         return enemies_moves
 
 
