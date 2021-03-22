@@ -224,7 +224,7 @@ class Bishop(Piece):
 
         row_i = row+1
         col_i = col-1
-        while row_i < 7 and col_i >= 0:
+        while row_i <= 7 and col_i >= 0:
 
             #print(Board[row_i][col_i])
             if Board[row_i][col_i] == 0:
@@ -349,7 +349,7 @@ class Queen(Piece):
 
         row_i = row+1
         col_i = col-1
-        while row_i < 7 and col_i > 0:
+        while row_i <= 7 and col_i >= 0:
 
             #print(Board[row_i][col_i])
             if Board[row_i][col_i] == 0:
@@ -357,7 +357,7 @@ class Queen(Piece):
                 self.available_moves.append((row_i, col_i))
                 row_i += 1
                 col_i -= 1
-                
+
             else:
                 if Board[row_i][col_i].color != self.color :
                     #print("fourth loop",row_i, col_i)
