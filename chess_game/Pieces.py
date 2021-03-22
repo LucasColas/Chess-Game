@@ -205,7 +205,7 @@ class Bishop(Piece):
 
         row_i = row-1
         col_i = col+1
-        while row_i >= 0 and col_i < 7:
+        while row_i >= 0 and col_i <= 7:
 
 
             if Board[row_i][col_i] == 0:
