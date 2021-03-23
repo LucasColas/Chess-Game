@@ -432,11 +432,7 @@ class King(Piece):
 
 
 
-    def checkmate(self,row,col,Board):
-        if (row,col) in self.enemies_moves(Board[row][col]):
-            #if self.ennemies_moves(piece).count((row,col)) > 1:
-                #while (row,col) in piece.available_moves:
-            self.available_moves.remove((row,col))
+
 
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
@@ -473,6 +469,5 @@ class King(Piece):
             if Board[row-1][col-1] == 0 or Board[row-1][col-1].color != self.color:
                 self.available_moves.append((row-1, col-1))
 
-        self.checkmate()
 
         return self.available_moves
