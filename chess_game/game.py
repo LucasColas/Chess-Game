@@ -41,7 +41,7 @@ class Game:
                 if self.Board.Board[r][c] != 0:
                     if self.Board.Board[r][c].color != piece.color:
                         moves = self.Board.Board[r][c].get_available_moves(r,c,self.Board.Board)
-                        print(self.Board.Board[r][c].type, moves)
+                        #print(self.Board.Board[r][c].type, moves)
                         for move in moves:
                             enemies_moves.append(move)
         print(enemies_moves)
@@ -51,13 +51,16 @@ class Game:
 
     def checkmate(self, piece,row,col):
         if piece.type == "King":
-            print()
+
             if (row,col) in self.enemies_moves(piece):
+                print(row, col)
+                print(self.enemies_moves(piece))
                 #if self.ennemies_moves(piece).count((row,col)) > 1:
                     #while (row,col) in piece.available_moves:
+                print(piece.available_moves)
                 piece.available_moves.remove((row,col))
 
-        print(piece.available_moves)
+        #print(piece.available_moves)
         self.valid_moves = piece.available_moves
 
         return self.valid_moves
