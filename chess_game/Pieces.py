@@ -429,6 +429,27 @@ class King(Piece):
     def __init__(self,Square, image,color,type,row,col):
         super().__init__(Square, image,color,type,row,col)
 
+
+    def enemies_moves(self,piece):
+        enemies_moves = []
+        for r in range(len(self.Board.Board)):
+            for c in range(len(self.Board.Board[r])):
+                if self.Board.Board[r][c] != 0:
+                    if self.Board.Board[r][c].color != piece.color:
+                        moves = self.Board.Board[r][c].get_available_moves(r,c,self.Board.Board)
+                        print(self.Board.Board[r][c].type, moves)
+                        for move in moves:
+                            enemies_moves.append(move)
+        print(enemies_moves)
+        return enemies_moves
+
+        
+    def checkmate(self,row,col,Board):
+        if (row,col) in self.enemies_moves(Board[row][col]):
+            #if self.ennemies_moves(piece).count((row,col)) > 1:
+                #while (row,col) in piece.available_moves:
+            self.available_moves.remove((row,col))
+
     def get_available_moves(self,row,col,Board):
         self.clear_available_moves()
 
@@ -464,5 +485,6 @@ class King(Piece):
             if Board[row-1][col-1] == 0 or Board[row-1][col-1].color != self.color:
                 self.available_moves.append((row-1, col-1))
 
+        self.checkmate()
 
         return self.available_moves
