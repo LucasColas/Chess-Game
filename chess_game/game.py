@@ -53,20 +53,16 @@ class Game:
         if piece.type == "King":
             print("piece available_moves", piece.available_moves)
             if (row,col) in self.enemies_moves(piece):
-                print("yes", row,col)
-            
-            if (row,col) in self.enemies_moves(piece) and (row,col) in piece.available_moves:
-                print(row, col)
-                print(self.enemies_moves(piece))
-                #if self.ennemies_moves(piece).count((row,col)) > 1:
-                    #while (row,col) in piece.available_moves:
-                print(piece.available_moves)
+                print("not a valid moves", row,col)
+
                 piece.available_moves.remove((row,col))
 
         print(piece.available_moves)
         self.valid_moves = piece.available_moves
+        if len(self.valid_moves) == 0:
+            return True
 
-        return self.valid_moves
+        return False
 
 
     def change_turn(self):
@@ -104,9 +100,6 @@ class Game:
 
         if self.selected and (row,col) in self.valid_moves:
             if piece == 0 or piece.color != self.selected.color:
-                if self.selected.type == "King":
-                    if self.checkmate(self.selected,row,col):
-                        pass
 
                 self.remove(piece,row,col)
                 self.Board.move(self.selected,row,col)
