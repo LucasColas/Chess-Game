@@ -47,9 +47,16 @@ class Game:
         print("enemies_moves",enemies_moves)
         return enemies_moves
 
+    def get_King_pos(self,piece):
+        for r in range(len(self.Board.Board)):
+            for c in range(len(self.Board.Board)):
+                if self.Board.Board[r][c] != 0:
+                    if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == piece.color:
+                        return (r,c)
 
 
     def checkmate(self, piece,row,col):
+        king_pos = get_King_pos(piece)
         if piece.type == "King":
             print("piece available_moves", piece.available_moves)
             if (row,col) in self.enemies_moves(piece):
