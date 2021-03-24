@@ -54,8 +54,7 @@ class Game:
             print("piece available_moves", piece.available_moves)
             if (row,col) in self.enemies_moves(piece):
                 print("yes", row,col)
-            if (row,col) in piece.available_moves:
-                print("yes2", row,col)
+            
             if (row,col) in self.enemies_moves(piece) and (row,col) in piece.available_moves:
                 print(row, col)
                 print(self.enemies_moves(piece))
