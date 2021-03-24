@@ -59,6 +59,8 @@ class Game:
         king_pos = get_King_pos(piece)
         if king_pos in self.enemies_moves(piece):
             print("we have to move our king")
+            return False
+            
         if piece.type == "King":
             print("piece available_moves", piece.available_moves)
             if (row,col) in self.enemies_moves(piece):
