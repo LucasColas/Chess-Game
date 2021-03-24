@@ -60,7 +60,7 @@ class Game:
         if king_pos in self.enemies_moves(piece):
             print("we have to move our king")
             return False
-            
+
         if piece.type == "King":
             print("piece available_moves", piece.available_moves)
             if (row,col) in self.enemies_moves(piece):
@@ -68,10 +68,10 @@ class Game:
 
                 piece.available_moves.remove((row,col))
 
-        print(piece.available_moves)
-        self.valid_moves = piece.available_moves
-        if len(self.valid_moves) == 0:
-            return True
+                print(piece.available_moves)
+                self.valid_moves = piece.available_moves
+            if len(self.valid_moves) == 0:
+                return True
 
         return False
 
