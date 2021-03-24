@@ -105,6 +105,8 @@ class Game:
 
         if self.selected and (row,col) in self.valid_moves:
             if piece == 0 or piece.color != self.selected.color:
+                if self.selected.type == "King":
+                    if 
                 self.remove(piece,row,col)
                 self.Board.move(self.selected,row,col)
                 self.change_turn()
