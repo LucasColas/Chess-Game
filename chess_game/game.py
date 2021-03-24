@@ -108,7 +108,7 @@ class Game:
                 if self.selected.type == "King":
                     if self.checkmate(self.selected,row,col):
                         pass
-                        
+
                 self.remove(piece,row,col)
                 self.Board.move(self.selected,row,col)
                 self.change_turn()
