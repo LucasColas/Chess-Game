@@ -60,7 +60,8 @@ class Game:
             print("we have to move our king")
             return False
 
-        return False
+        return True
+
     def checkmate(self, piece,row,col):
 
 
