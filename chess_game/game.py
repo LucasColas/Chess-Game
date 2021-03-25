@@ -58,6 +58,7 @@ class Game:
     def checkmate(self, piece,row,col):
         king_pos = get_King_pos(piece)
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
+            print("we have to move our king")
             return False
 
         if piece.type == "King":
@@ -69,6 +70,9 @@ class Game:
 
                 print(piece.available_moves)
                 self.valid_moves = piece.available_moves
+                return True
+            pieces_moves_set = set(piece.available_moves)
+            enemies_moves_set = set(self.enemies_moves(piece))
             if len(self.valid_moves) == 0:
                 return True
 
