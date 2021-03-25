@@ -70,10 +70,11 @@ class Game:
 
                 print(piece.available_moves)
                 self.valid_moves = piece.available_moves
-                return True
+                return False
             pieces_moves_set = set(piece.available_moves)
             enemies_moves_set = set(self.enemies_moves(piece))
-            if len(self.valid_moves) == 0:
+            king_moves = pieces_moves_set - enemies_moves_set
+            if len(king_moves) == 0:
                 return True
 
         return False
