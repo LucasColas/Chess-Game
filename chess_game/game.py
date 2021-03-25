@@ -54,12 +54,15 @@ class Game:
                     if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == piece.color:
                         return (r,c)
 
-
-    def checkmate(self, piece,row,col):
+    def check_King_pos(self, piece,row,col):
         king_pos = get_King_pos(piece)
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
             print("we have to move our king")
             return False
+
+        return False
+    def checkmate(self, piece,row,col):
+
 
         if piece.type == "King":
             print("piece available_moves", piece.available_moves)
