@@ -71,7 +71,7 @@ class Game:
             pieces_moves_set = set(piece.available_moves)
             enemies_moves_set = set(self.enemies_moves(piece))
             king_moves = pieces_moves_set - enemies_moves_set
-            self.valid_moves = king_moves
+            self.valid_moves = list(king_moves)
             if len(self.valid_moves) == 0:
                 return True
 
@@ -122,7 +122,9 @@ class Game:
 
         if self.selected and (row,col) in self.valid_moves:
             if piece == 0 or piece.color != self.selected.color:
-
+                if not self.check_King_pos(self.select, row, col):
+                    return False
+                
                 self.remove(piece,row,col)
                 self.Board.move(self.selected,row,col)
                 self.change_turn()
