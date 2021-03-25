@@ -78,7 +78,8 @@ class Game:
             pieces_moves_set = set(piece.available_moves)
             enemies_moves_set = set(self.enemies_moves(piece))
             king_moves = pieces_moves_set - enemies_moves_set
-            if len(king_moves) == 0:
+            self.valid_moves = king_moves
+            if len(self.valid_moves) == 0:
                 return True
 
         return False
