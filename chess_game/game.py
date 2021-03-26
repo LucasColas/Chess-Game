@@ -91,7 +91,7 @@ class Game:
 
         if self.selected:
             #print("selected")
-
+            
             move = self._move(row,col)
 
             if not move:
