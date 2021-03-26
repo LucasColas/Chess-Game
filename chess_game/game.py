@@ -68,7 +68,7 @@ class Game:
 
     def checkmate(self):
 
-        king_pos = self.get_King_pos(piece)
+        king_pos = self.get_King_pos()
         get_king = self.get_piece(king_pos[0], king_pos[1])
         king_available_moves = set(get_king.get_available_moves(king_pos[0], king_pos[1], self.Board.Board))
         enemies_moves_set = set(self.enemies_moves(piece))
