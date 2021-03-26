@@ -114,7 +114,6 @@ class Game:
             #print(piece)
             self.valid_moves = piece.get_available_moves(row,col,self.Board.Board)
             print("self valid_moves", self.valid_moves)
-            self.valid_moves = self.checkmate(self.selected,row,col)
             print("new valid_moves", self.valid_moves)
 
     def _move(self,row,col):
@@ -124,7 +123,7 @@ class Game:
             if piece == 0 or piece.color != self.selected.color:
                 if not self.check_King_pos(self.select, row, col):
                     return False
-                
+
                 self.remove(piece,row,col)
                 self.Board.move(self.selected,row,col)
                 self.change_turn()
