@@ -66,7 +66,7 @@ class Game:
 
         return True
 
-    def checkmate(self, piece,row,col):
+    def checkmate(self):
 
         king_pos = self.get_King_pos(piece)
         get_king = self.get_piece(king_pos[0], king_pos[1])
@@ -91,7 +91,7 @@ class Game:
 
         if self.selected:
             #print("selected")
-            
+
             move = self._move(row,col)
 
             if not move:
