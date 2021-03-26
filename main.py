@@ -28,7 +28,7 @@ def main():
         clock.tick(FPS)
 
         game.update_window()
-
+        if game.check_game()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -37,6 +37,7 @@ def main():
             if event.type == pygame.KEYDOWN and game_over:
                 if event.key == pygame.K_SPACE and game_over:
                     game.reset()
+
 
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
 

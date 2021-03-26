@@ -29,9 +29,19 @@ class Game:
     def check_game(self):
         if self.Black_pieces_left == 0:
             print("Whites win")
+            return True
 
         if self.White_pieces_left == 0:
             print("Blacks win")
+            return True
+
+        if self.checkmate():
+            if self.turn == White:
+                print("Black Wins")
+                return True
+            else:
+                print("White wins")
+                return True
 
 
     def enemies_moves(self,piece):
