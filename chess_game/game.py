@@ -47,21 +47,21 @@ class Game:
         print("enemies_moves",enemies_moves)
         return enemies_moves
 
-    def get_King_pos(self,piece):
+    def get_King_pos(self):
         for r in range(len(self.Board.Board)):
             for c in range(len(self.Board.Board)):
                 if self.Board.Board[r][c] != 0:
-                    if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == piece.color:
+                    if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
                         return (r,c)
 
     def check_King_pos(self, piece,row,col):
-        king_pos = self.get_King_pos(piece)
+        king_pos = self.get_King_pos()
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
             print("we have to move our king")
             return False
 
         if king_pos in self.enemies_moves(piece):
-            print("we have to move our king")
+            print("we have to move somewhere else our king")
             return False
 
         return True
