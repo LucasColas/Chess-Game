@@ -74,9 +74,6 @@ class Game:
             print("the king can't go there")
             return False
 
-        if king_pos in self.enemies_moves(piece):
-            print("we have to move somewhere else our king")
-            return False
 
         return True
 
