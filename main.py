@@ -28,7 +28,9 @@ def main():
         clock.tick(FPS)
 
         game.update_window()
-        if game.check_game()
+        if game.check_game():
+            game_over = True
+            
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
