@@ -60,6 +60,10 @@ class Game:
             print("we have to move our king")
             return False
 
+        if piece.type == "King" and self.enemies_moves(piece).count((row,col)) > 1:
+            print("the king can't go there")
+            return False
+
         if king_pos in self.enemies_moves(piece):
             print("we have to move somewhere else our king")
             return False
