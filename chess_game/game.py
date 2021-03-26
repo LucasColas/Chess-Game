@@ -66,26 +66,12 @@ class Game:
 
         king_pos = self.get_King_pos(piece)
         get_king = self.get_piece(king_pos[0], king_pos[1])
+        king_available_moves = set(get_king.get_available_moves(king_pos[0], king_pos[1], self.Board.Board))
+        enemies_moves_set = set(self.enemies_moves(piece))
+        king_moves = king_available_moves - enemies_moves_set
+        if len(king_moves) == 0:
+            return True
         
-        if piece.type == "King":
-            print("piece available_moves", piece.available_moves)
-
-            pieces_moves_set = set(piece.available_moves)
-            enemies_moves_set = set(self.enemies_moves(piece))
-            king_moves = pieces_moves_set - enemies_moves_set
-            self.valid_moves = list(king_moves)
-            if len(self.valid_moves) == 0:
-                return True
-
-            if (row,col) in self.enemies_moves(piece):
-                print("not a valid moves", row,col)
-
-                piece.available_moves.remove((row,col))
-
-                print(piece.available_moves)
-                self.valid_moves = piece.available_moves
-                return False
-
         return False
 
 
