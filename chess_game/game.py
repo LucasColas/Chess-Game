@@ -55,7 +55,7 @@ class Game:
                         #print(self.Board.Board[r][c].type, moves)
                         for move in moves:
                             enemies_moves.append(move)
-        print("enemies_moves",enemies_moves)
+        #print("enemies_moves",enemies_moves)
         return enemies_moves
 
     def get_King_pos(self):
