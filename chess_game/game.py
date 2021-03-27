@@ -70,6 +70,7 @@ class Game:
         king_pos = self.get_King_pos()
         print("piece",piece)
         print("piece type", piece.type)
+        
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
             print("we have to move our king")
             return False
