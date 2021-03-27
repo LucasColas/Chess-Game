@@ -69,6 +69,12 @@ class Game:
 
     def visualize_move(self, piece,row,col):
         new_Board = copy.deepcopy(self.Board.Board)
+        if piece != 0:
+            new_Board[row][col] = 0
+
+        new_Board[piece.row][piece.col], new_Board[row][col] = new_Board[row][col], new_Board[piece.row][piece.col]
+        piece.piece_move(row,col)
+
 
 
     def check_King_pos(self, piece,row,col):
@@ -155,8 +161,8 @@ class Game:
                 self.White_pieces_left -= 1
             else:
                 self.Black_pieces_left -= 1
-        #print("White_pieces_left : ", self.White_pieces_left)
-        #print("Black_pieces_left : ", self.Black_pieces_left)
+        print("White_pieces_left : ", self.White_pieces_left)
+        print("Black_pieces_left : ", self.Black_pieces_left)
 
 
     def draw_available_moves(self):
