@@ -62,11 +62,14 @@ class Game:
         for r in range(len(self.Board.Board)):
             for c in range(len(self.Board.Board)):
                 if self.Board.Board[r][c] != 0:
+                    #print(self.Board.Board[r][c].type)
                     if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
                         return (r,c)
 
     def check_King_pos(self, piece,row,col):
         king_pos = self.get_King_pos()
+        print("piece",piece)
+        print("piece type", piece.type)
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
             print("we have to move our king")
             return False

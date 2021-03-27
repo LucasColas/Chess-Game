@@ -429,9 +429,7 @@ class King(Piece):
     def __init__(self,Square, image,color,type,row,col):
         super().__init__(Square, image,color,type,row,col)
 
-
-
-
+    
 
 
     def get_available_moves(self,row,col,Board):
