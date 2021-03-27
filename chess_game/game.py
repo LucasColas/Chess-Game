@@ -125,10 +125,10 @@ class Game:
 
     def _move(self,row,col):
         piece = self.Board.get_piece(row,col)
-
+        print("self selected", self.selected.type)
         if self.selected and (row,col) in self.valid_moves:
             if piece == 0 or piece.color != self.selected.color:
-                if not self.check_King_pos(self.select, row, col):
+                if not self.check_King_pos(self.selected, row, col):
                     return False
 
                 self.remove(piece,row,col)
