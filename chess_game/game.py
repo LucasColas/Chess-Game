@@ -1,6 +1,7 @@
 import pygame
 from .board import newBoard
 from .constants import *
+import copy
 
 
 class Game:
@@ -66,11 +67,15 @@ class Game:
                     if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
                         return (r,c)
 
+    def visualize_move(self, piece,row,col):
+        new_Board = copy.deepcopy(self.Board.Board)
+
+
     def check_King_pos(self, piece,row,col):
         king_pos = self.get_King_pos()
-        print("piece",piece)
+        print("piece", piece)
         print("piece type", piece.type)
-        
+
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
             print("we have to move our king")
             return False
