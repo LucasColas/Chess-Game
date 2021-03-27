@@ -2,6 +2,7 @@ import pygame
 from .board import newBoard
 from .constants import *
 
+
 class Game:
     def __init__(self, Width, Height, Rows, Cols, Square,Win):
         self.Win = Win
@@ -80,11 +81,11 @@ class Game:
     def checkmate(self):
 
         king_pos = self.get_King_pos()
-        get_king = self.get_piece(king_pos[0], king_pos[1])
+        get_king = self.Board.get_piece(king_pos[0], king_pos[1])
         king_available_moves = set(get_king.get_available_moves(king_pos[0], king_pos[1], self.Board.Board))
-        enemies_moves_set = set(self.enemies_moves(piece))
+        enemies_moves_set = set(self.enemies_moves(get_king))
         king_moves = king_available_moves - enemies_moves_set
-        if len(king_moves) == 0:
+        if len(king_moves) == 0 and len(king_available_moves) != 0:
             return True
 
         return False
