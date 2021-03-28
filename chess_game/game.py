@@ -75,9 +75,9 @@ class Game:
             new_Board[row][col] = 0
 
         new_Board[piece.row][piece.col], new_Board[row][col] = new_Board[row][col], new_Board[piece.row][piece.col]
+
         piece.piece_move(row,col)
-
-
+        if (row,col) in 
 
 
 
