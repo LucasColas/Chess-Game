@@ -70,6 +70,7 @@ class Game:
     def visualize_move(self, piece,row,col):
         piece_row = piece.row
         piece_col = piece.col
+        print(self.Board.Board)
         new_Board = copy.deepcopy(self.Board.Board)
         if piece != 0:
             new_Board[row][col] = 0
