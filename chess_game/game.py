@@ -77,7 +77,10 @@ class Game:
         new_Board[piece.row][piece.col], new_Board[row][col] = new_Board[row][col], new_Board[piece.row][piece.col]
 
         piece.piece_move(row,col)
-        if (row,col) in 
+        if (row,col) in self.enemies_moves(piece):
+            return False
+
+        return True
 
 
 
