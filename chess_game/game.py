@@ -89,7 +89,8 @@ class Game:
         print("piece", piece)
         print("piece type", piece.type)
 
-        if not self.visualize_move(piece,row,col)
+        if not self.visualize_move(piece,row,col):
+            return False
 
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
             print("we have to move our king")
