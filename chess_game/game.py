@@ -80,6 +80,9 @@ class Game:
         if (row,col) in self.enemies_moves(piece):
             return False
 
+        if self.checkmate():
+            return False
+
         return True
 
 
