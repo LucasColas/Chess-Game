@@ -71,19 +71,24 @@ class Game:
         piece_row = piece.row
         piece_col = piece.col
         print(self.Board.Board)
-        new_Board = copy.deepcopy(self.Board.Board)
+        new_Board = copy.copy(self.Board.Board)
+        print("new_Board", new_Board)
         if piece != 0:
+            print("pos", new_Board)
             new_Board[row][col] = 0
 
         new_Board[piece.row][piece.col], new_Board[row][col] = new_Board[row][col], new_Board[piece.row][piece.col]
 
-        piece.piece_move(row,col)
+
         if (row,col) in self.enemies_moves(piece):
+            piece.piece_move(row,col)
             return False
 
         if self.checkmate():
+            piece.piece_move(row,col)
             return False
 
+        piece.piece_move(row,col)
         return True
 
 
@@ -160,6 +165,7 @@ class Game:
                 self.remove(piece,row,col)
                 self.Board.move(self.selected,row,col)
                 self.change_turn()
+                print("turn", self.turn)
                 self.valid_moves = []
                 self.selected = None
 
