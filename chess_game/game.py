@@ -59,23 +59,28 @@ class Game:
         #print("enemies_moves",enemies_moves)
         return enemies_moves
 
-    def get_King_pos(self):
-        for r in range(len(self.Board.Board)):
-            for c in range(len(self.Board.Board)):
-                if self.Board.Board[r][c] != 0:
+    def get_King_pos(self,Board):
+        for r in range(len(Board)):
+            for c in range(len(Board)):
+                if Board[r][c] != 0:
                     #print(self.Board.Board[r][c].type)
-                    if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
+                    if Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
                         return (r,c)
 
     def simulate_move(self, piece,row,col):
         temp_board = deepcopy(self.Board)
         temp_piece = temp_board.get_piece(piece.row,piece.col)
         self.remove(temp_board, temp_piece, row,col)
+        temp_board.move(temp_piece,row,col)
+        king_pos = self.get_King_pos(temp_board)
+
+        if king_pos in self.enemies_moves(piece):
+            return False
 
 
 
 
-
+    """
     def check_King_pos(self, piece,row,col):
         king_pos = self.get_King_pos()
         print("piece", piece)
@@ -92,6 +97,7 @@ class Game:
 
 
         return True
+    """
 
     def checkmate(self):
 
