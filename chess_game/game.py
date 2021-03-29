@@ -37,7 +37,7 @@ class Game:
             print("Blacks win")
             return True
 
-        if self.checkmate():
+        if self.checkmate(self.Board.Board):
             if self.turn == White:
                 print("Black Wins")
                 return True
@@ -100,11 +100,11 @@ class Game:
         return True
     """
 
-    def checkmate(self):
+    def checkmate(self,Board):
 
-        king_pos = self.get_King_pos()
-        get_king = self.Board.get_piece(king_pos[0], king_pos[1])
-        king_available_moves = set(get_king.get_available_moves(king_pos[0], king_pos[1], self.Board.Board))
+        king_pos = self.get_King_pos(Board)
+        get_king = Board.get_piece(king_pos[0], king_pos[1])
+        king_available_moves = set(get_king.get_available_moves(king_pos[0], king_pos[1], Board))
         enemies_moves_set = set(self.enemies_moves(get_king))
         king_moves = king_available_moves - enemies_moves_set
         if len(king_moves) == 0 and len(king_available_moves) != 0:
