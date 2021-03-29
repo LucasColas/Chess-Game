@@ -46,13 +46,13 @@ class Game:
                 return True
 
 
-    def enemies_moves(self,piece):
+    def enemies_moves(self,piece, Board):
         enemies_moves = []
-        for r in range(len(self.Board.Board)):
-            for c in range(len(self.Board.Board[r])):
-                if self.Board.Board[r][c] != 0:
-                    if self.Board.Board[r][c].color != piece.color:
-                        moves = self.Board.Board[r][c].get_available_moves(r,c,self.Board.Board)
+        for r in range(len(Board)):
+            for c in range(len(Board[r])):
+                if Board[r][c] != 0:
+                    if Board[r][c].color != piece.color:
+                        moves =Board[r][c].get_available_moves(r,c,Board)
                         #print(self.Board.Board[r][c].type, moves)
                         for move in moves:
                             enemies_moves.append(move)
@@ -63,7 +63,7 @@ class Game:
         for r in range(len(Board)):
             for c in range(len(Board)):
                 if Board[r][c] != 0:
-                    if Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
+                    if Board[r][c].type == "King" and Board[r][c].color == self.turn:
                         return (r,c)
 
     def simulate_move(self, piece,row,col):
@@ -73,7 +73,7 @@ class Game:
         temp_board.move(temp_piece,row,col)
         king_pos = self.get_King_pos(temp_board)
 
-        if king_pos in self.enemies_moves(piece):
+        if king_pos in self.enemies_moves(piece,temp_board.Board):
             return False
 
         return True
