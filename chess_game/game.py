@@ -69,7 +69,9 @@ class Game:
 
     def visualize_move(self, piece,row,col):
         temp_board = deepcopy(self.Board.Board)
-        temp_piece = self.Board.get_piece()
+        temp_piece = self.Board.get_piece(piece.row,piece.col)
+
+
 
 
 
@@ -142,7 +144,7 @@ class Game:
                 if not self.check_King_pos(self.selected, row, col):
                     return False
 
-                self.remove(piece,row,col)
+                self.remove(self.Board.Board,piece,row,col)
                 self.Board.move(self.selected,row,col)
                 self.change_turn()
                 print("turn", self.turn)
@@ -154,9 +156,9 @@ class Game:
         return False
 
 
-    def remove(self,piece,row,col):
+    def remove(self,board,piece,row,col):
         if piece != 0:
-            self.Board.Board[row][col] = 0
+            board[row][col] = 0
             if piece.color == White:
                 self.White_pieces_left -= 1
             else:
