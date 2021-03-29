@@ -67,12 +67,10 @@ class Game:
                     if self.Board.Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
                         return (r,c)
 
-    def visualize_move(self, piece,row,col):
-        temp_board = deepcopy(self.Board.Board)
-        temp_piece = self.Board.get_piece(piece.row,piece.col)
+    def simulate_move(self, piece,row,col):
+        temp_board = deepcopy(self.Board)
+        temp_piece = temp_board.get_piece(piece.row,piece.col)
         self.remove(temp_board, temp_piece, row,col)
-
-        
 
 
 
@@ -83,8 +81,6 @@ class Game:
         print("piece", piece)
         print("piece type", piece.type)
 
-        if not self.visualize_move(piece,row,col):
-            return False
 
         if piece.type != "King" and king_pos in self.enemies_moves(piece):
             print("we have to move our king")
