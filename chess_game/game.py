@@ -72,6 +72,8 @@ class Game:
         temp_piece = self.Board.get_piece(piece.row,piece.col)
         self.remove(temp_board, temp_piece, row,col)
 
+        
+
 
 
 
