@@ -70,6 +70,7 @@ class Game:
     def visualize_move(self, piece,row,col):
         temp_board = deepcopy(self.Board.Board)
         temp_piece = self.Board.get_piece(piece.row,piece.col)
+        self.remove(temp_board, temp_piece, row,col)
 
 
 
