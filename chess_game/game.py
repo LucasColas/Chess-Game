@@ -63,7 +63,6 @@ class Game:
         for r in range(len(Board)):
             for c in range(len(Board)):
                 if Board[r][c] != 0:
-                    #print(self.Board.Board[r][c].type)
                     if Board[r][c].type == "King" and self.Board.Board[r][c].color == self.turn:
                         return (r,c)
 
