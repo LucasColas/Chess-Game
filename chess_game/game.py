@@ -37,7 +37,7 @@ class Game:
             print("Blacks win")
             return True
 
-        if self.checkmate(self.Board.Board):
+        if self.checkmate(self.Board):
             if self.turn == White:
                 print("Black Wins")
                 return True
