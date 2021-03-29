@@ -1,7 +1,7 @@
 import pygame
 from .board import newBoard
 from .constants import *
-import copy
+from copy import deepcopy
 
 
 class Game:
@@ -68,32 +68,8 @@ class Game:
                         return (r,c)
 
     def visualize_move(self, piece,row,col):
-        piece_row = piece.row
-        piece_col = piece.col
-        print(self.Board.Board)
-        new_Board = copy.copy(self.Board.Board)
-        print("new_Board", new_Board)
-        if piece != 0:
-            print("pos", new_Board)
-            new_Board[row][col] = 0
-
-        print("move")
-        new_Board[piece.row][piece.col], new_Board[row][col] = new_Board[row][col], new_Board[piece.row][piece.col]
-
-        print("see if row,col are in enemies_moves")
-        if (row,col) in self.enemies_moves(piece):
-            print("in if (row,col)...")
-            piece.piece_move(row,col)
-            return False
-
-        print("check mate")
-        if self.checkmate():
-            piece.piece_move(row,col)
-            return False
-
-        print("update piece")
-        piece.piece_move(row,col)
-        return True
+        temp_board = deepcopy(self.Board.Board)
+        temp_piece = self.Board.get_piece()
 
 
 
