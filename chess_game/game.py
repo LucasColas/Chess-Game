@@ -105,7 +105,7 @@ class Game:
         king_pos = self.get_King_pos(Board)
         get_king = Board.get_piece(king_pos[0], king_pos[1])
         king_available_moves = set(get_king.get_available_moves(king_pos[0], king_pos[1], Board))
-        enemies_moves_set = set(self.enemies_moves(get_king))
+        enemies_moves_set = set(self.enemies_moves(get_king,Board))
         king_moves = king_available_moves - enemies_moves_set
         if len(king_moves) == 0 and len(king_available_moves) != 0:
             return True
