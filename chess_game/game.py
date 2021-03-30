@@ -37,7 +37,7 @@ class Game:
             print("Blacks win")
             return True
 
-        if self.checkmate(self.Board):
+        if self.checkmate(self.Board.Board):
             if self.turn == White:
                 print("Black Wins")
                 return True
@@ -71,7 +71,7 @@ class Game:
         temp_piece = temp_board.get_piece(piece.row,piece.col)
         self.remove(temp_board, temp_piece, row,col)
         temp_board.move(temp_piece,row,col)
-        king_pos = self.get_King_pos(temp_board)
+        king_pos = self.get_King_pos(temp_board.Board)
 
         if king_pos in self.enemies_moves(piece,temp_board.Board):
             return False
