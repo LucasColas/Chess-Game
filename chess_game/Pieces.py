@@ -26,6 +26,7 @@ class Piece:
         self.x = self.col*self.Square
         self.y = self.row*self.Square
 
+    #To do : move this method in board (to avoid pygame copy error)
     def clear_available_moves(self):
         if len(self.available_moves) > 0:
             self.available_moves = []
@@ -429,7 +430,7 @@ class King(Piece):
     def __init__(self,Square, image,color,type,row,col):
         super().__init__(Square, image,color,type,row,col)
 
-    
+
 
 
     def get_available_moves(self,row,col,Board):
