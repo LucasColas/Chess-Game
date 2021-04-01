@@ -83,6 +83,8 @@ class Game:
         """
 
         if king_pos in self.enemies_moves(piece,temp_board.Board):
+            piece.row,piece.col = piece_row, piece_row
+            self.Board.Board[row][col] = save_piece
             return False
 
         return True
