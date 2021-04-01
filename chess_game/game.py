@@ -152,7 +152,7 @@ class Game:
         print("self selected", self.selected.type)
         if self.selected and (row,col) in self.valid_moves:
             if piece == 0 or piece.color != self.selected.color:
-                if self.simulate_move(piece,row,col):
+                if self.simulate_move(self.selected,row,col):
 
                     self.remove(self.Board.Board,piece,row,col)
                     self.Board.move(self.selected,row,col)
