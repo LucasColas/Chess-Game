@@ -74,6 +74,7 @@ class Game:
 
         self.Board.Board[piece.row][piece.col], self.Board.Board[row][col] = self.Board.Board[row][col], self.Board.Board[piece.row][piece.col]
 
+        King_pos = self.get_King_pos(self.Board.Board)
         if king_pos in self.enemies_moves(piece,temp_board.Board):
             piece.row,piece.col = piece_row, piece_row
             self.Board.Board[row][col] = save_piece
