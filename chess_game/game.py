@@ -72,7 +72,7 @@ class Game:
         if self.Board.Board[row][col] != 0:
             self.Board.Board[row][col] = 0
 
-        self.Board.Board[piece.row,piece.col], self.Board.Board[row][col] = self.Board.Board[row][col], self.Board[piece.row][piece.col]
+        self.Board.Board[piece.row][piece.col], self.Board.Board[row][col] = self.Board.Board[row][col], self.Board[piece.row][piece.col]
 
         if king_pos in self.enemies_moves(piece,temp_board.Board):
             piece.row,piece.col = piece_row, piece_row
