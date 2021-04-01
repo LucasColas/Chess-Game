@@ -26,11 +26,12 @@ class Piece:
         self.x = self.col*self.Square
         self.y = self.row*self.Square
 
-    #To do : move this method in board (to avoid pygame copy error)
     def clear_available_moves(self):
         if len(self.available_moves) > 0:
             self.available_moves = []
 
+            
+    #To do : move this method in board (to avoid pygame copy error)
     def draw_piece(self,Win):
         Win.blit(self.image, (self.x, self.y))
 
