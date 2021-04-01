@@ -86,4 +86,4 @@ class newBoard:
         for row in range(self.Rows):
             for col in range(self.Cols):
                 if self.Board[row][col] != 0:
-                    draw_pieces(self.Board[row][col], self.Win)
+                    draw_piece(self.Board[row][col], self.Win)
