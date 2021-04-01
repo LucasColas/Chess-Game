@@ -87,6 +87,8 @@ class Game:
             self.Board.Board[row][col] = save_piece
             return False
 
+        piece.row,piece.col = piece_row, piece_row
+        self.Board.Board[row][col] = save_piece
         return True
 
 
