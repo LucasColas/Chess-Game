@@ -74,14 +74,6 @@ class Game:
 
         self.Board.Board[piece.row,piece.col], self.Board.Board[row][col] = self.Board.Board[row][col], self.Board[piece.row][piece.col]
 
-        """
-        temp_board = deepcopy(self.Board)
-        temp_piece = temp_board.get_piece(piece.row,piece.col)
-        self.remove(temp_board, temp_piece, row,col)
-        temp_board.move(temp_piece,row,col)
-        king_pos = self.get_King_pos(temp_board.Board)
-        """
-
         if king_pos in self.enemies_moves(piece,temp_board.Board):
             piece.row,piece.col = piece_row, piece_row
             self.Board.Board[row][col] = save_piece
