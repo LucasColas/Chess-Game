@@ -68,6 +68,7 @@ class Game:
 
     def simulate_move(self, piece,row,col):
         piece_row, piece_col = piece.row, piece.col
+        
         save_piece = self.Board.Board[row][col]
         if self.Board.Board[row][col] != 0:
             self.Board.Board[row][col] = 0
