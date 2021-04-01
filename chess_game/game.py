@@ -67,11 +67,20 @@ class Game:
                         return (r,c)
 
     def simulate_move(self, piece,row,col):
+        piece_row, piece_col = piece.row, piece.col
+        save_piece = self.Board.Board[row][col]
+        if self.Board.Board[row][col] != 0:
+            self.Board.Board[row][col] = 0
+
+        self.Board.Board[piece.row,piece.col], self.Board.Board[row][col] = self.Board.Board[row][col], self.Board[piece.row][piece.col]
+
+        """
         temp_board = deepcopy(self.Board)
         temp_piece = temp_board.get_piece(piece.row,piece.col)
         self.remove(temp_board, temp_piece, row,col)
         temp_board.move(temp_piece,row,col)
         king_pos = self.get_King_pos(temp_board.Board)
+        """
 
         if king_pos in self.enemies_moves(piece,temp_board.Board):
             return False
