@@ -79,9 +79,8 @@ class newBoard:
             for col in range(row%2, Cols,2):
                 pygame.draw.rect(self.Win,White,(Square*(row), Square*(col),Square,Square))
 
-
-    def draw_test(self):
-        self.Win.blit(White_Knight, (self.Width//2, self.Width//2))
+    def draw_piece(self,piece,Win):
+        Win.blit(piece.image, (piece.x, piece.y))
 
     def draw_pieces(self):
         for row in range(self.Rows):
