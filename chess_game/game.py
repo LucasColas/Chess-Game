@@ -165,9 +165,10 @@ class Game:
                     print("turn", self.turn)
                     self.valid_moves = []
                     self.selected = None
-                
 
-            return True
+
+                    return True
+                return False
 
         return False
 
