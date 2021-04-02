@@ -89,27 +89,6 @@ class Game:
         return True
 
 
-
-
-    """
-    def check_King_pos(self, piece,row,col):
-        king_pos = self.get_King_pos()
-        print("piece", piece)
-        print("piece type", piece.type)
-
-
-        if piece.type != "King" and king_pos in self.enemies_moves(piece):
-            print("we have to move our king")
-            return False
-
-        if piece.type == "King" and self.enemies_moves(piece).count((row,col)) > 1:
-            print("the king can't go there")
-            return False
-
-
-        return True
-    """
-
     def checkmate(self,Board):
 
         king_pos = self.get_King_pos(Board.Board)
