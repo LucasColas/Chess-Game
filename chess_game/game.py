@@ -78,7 +78,8 @@ class Game:
 
         king_pos = self.get_King_pos(self.Board.Board)
         if king_pos in self.enemies_moves(piece,self.Board.Board):
-            piece.row,piece.col = piece_row, piece_row
+            piece.row,piece.col = piece_row, piece_col
+            self.Board.Board[piece_row][piece_col] = piece
             self.Board.Board[row][col] = save_piece
             return False
 
@@ -164,6 +165,7 @@ class Game:
                     print("turn", self.turn)
                     self.valid_moves = []
                     self.selected = None
+                
 
             return True
 
