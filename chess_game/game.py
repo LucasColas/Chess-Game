@@ -88,6 +88,19 @@ class Game:
         self.Board.Board[row][col] = save_piece
         return True
 
+    def possible_moves(self,Board):
+        possible_moves = []
+        for r in range(len(Board)):
+            for c in range(len(Board[r])):
+                if Board[r][c] != 0:
+                    if Board[r][c].color == piece.color and Board[r][c].type != "King":
+                        moves = Board[r][c].get_available_moves(r,c,Board)
+                        #print(self.Board.Board[r][c].type, moves)
+                        for move in moves:
+                            possible_moves.append(move)
+
+        return possible_moves
+
 
     def checkmate(self,Board):
 
@@ -96,6 +109,7 @@ class Game:
         king_available_moves = set(get_king.get_available_moves(king_pos[0], king_pos[1], Board.Board))
         enemies_moves_set = set(self.enemies_moves(get_king,Board.Board))
         king_moves = king_available_moves - enemies_moves_set
+
         if len(king_moves) == 0 and len(king_available_moves) != 0:
             return True
 
