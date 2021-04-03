@@ -111,7 +111,7 @@ class Game:
         king_moves = king_available_moves - enemies_moves_set
         set1 = king_available_moves.intersection(enemies_moves_set)
         possible_moves_to_def = set1.intersection(self.possible_moves(Board))
-        if len(king_moves) == 0 and len(king_available_moves) != 0:
+        if len(king_moves) == 0 and len(king_available_moves) != 0 and possible_moves_to_def == 0:
             return True
 
         return False
