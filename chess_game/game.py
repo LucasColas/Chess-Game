@@ -93,7 +93,7 @@ class Game:
         for r in range(len(Board)):
             for c in range(len(Board[r])):
                 if Board[r][c] != 0:
-                    if Board[r][c].color == piece.color and Board[r][c].type != "King":
+                    if Board[r][c].color == self.turn and Board[r][c].type != "King":
                         moves = Board[r][c].get_available_moves(r,c,Board)
                         #print(self.Board.Board[r][c].type, moves)
                         for move in moves:
@@ -110,7 +110,7 @@ class Game:
         enemies_moves_set = set(self.enemies_moves(get_king,Board.Board))
         king_moves = king_available_moves - enemies_moves_set
         set1 = king_available_moves.intersection(enemies_moves_set)
-        possible_moves_to_def = set1.intersection(self.possible_moves(Board))
+        possible_moves_to_def = set1.intersection(self.possible_moves(Board.Board))
         if len(king_moves) == 0 and len(king_available_moves) != 0 and possible_moves_to_def == 0:
             return True
 
