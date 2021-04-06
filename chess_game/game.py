@@ -184,3 +184,6 @@ class Game:
             for pos in self.valid_moves:
                 row,col = pos[0],pos[1]
                 pygame.draw.circle(self.Win, Green, (col*self.Square + self.Square//2, row*self.Square + self.Square//2),self.Square//8)
+
+    def get_board(self):
+        return self.board
